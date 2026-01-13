@@ -3,7 +3,7 @@ export const PROFILE = {
     title: "Backend Developer (.NET) – Logistics & Warehouse Systems",
     location: "Hanoi, Vietnam",
     summary: "3 years building ERP/Logistics systems (H2ALL/FastLink) using multi-tier .NET (WinForms + services), SQL Server/MySQL, DevExpress reporting, integrations across Warehouse V3, Checkpoint/Handover, Finance, E-commerce, GPS.",
-    cvLink: "/cv.pdf", // User asked for /public/cv.pdf but in Next.js public files are served at root
+    cvLink: "https://www.topcv.vn/xem-cv/A1dVAVZVVg1YAANSAAIGUQQFBgIFAA5bCgEHBg9bb9",
     email: "vinhdt1406@gmail.com",
     phone: "+84 964 063 455",
     linkedin: "https://www.linkedin.com/in/vinhdt10",

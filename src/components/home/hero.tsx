@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Download, Mail } from "lucide-react"
+import { PROFILE } from "@/lib/data"
 
 export function Hero() {
     return (
@@ -44,8 +45,8 @@ export function Hero() {
                                 </Link>
                             </Button>
                             <Button variant="outline" size="lg" className="h-12 px-8 text-base" asChild>
-                                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                                    Download CV <Download className="ml-2 h-5 w-5" />
+                                <a href={PROFILE.cvLink} target="_blank" rel="noopener noreferrer">
+                                    View CV <ArrowRight className="ml-2 h-5 w-5" />
                                 </a>
                             </Button>
                             <Button variant="ghost" size="lg" className="h-12 px-8 text-base" asChild>
