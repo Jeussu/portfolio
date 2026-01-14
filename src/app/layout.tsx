@@ -22,12 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
+    url: "https://vinh-portfolio-self.vercel.app",
     title: "Do The Vinh | Backend Developer (.NET)",
     description: "Specialized in High-Performance Logistics & Warehouse Systems.",
     siteName: "Do The Vinh Portfolio",
   },
 };
+
 
 export default function RootLayout({
   children,

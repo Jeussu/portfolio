@@ -1,42 +1,44 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+    const baseUrl = "https://vinh-portfolio-self.vercel.app";
+
     return [
         {
-            url: 'https://dothevinh.com',
+            url: `${baseUrl}`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: "monthly",
             priority: 1,
         },
         {
-            url: 'https://dothevinh.com/projects',
+            url: `${baseUrl}/projects`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: 'https://dothevinh.com/experience',
+            url: `${baseUrl}/experience`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: 'https://dothevinh.com/upskill',
+            url: `${baseUrl}/upskill`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: "monthly",
             priority: 0.5,
         },
         {
-            url: 'https://dothevinh.com/contact',
+            url: `${baseUrl}/contact`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: "yearly",
             priority: 0.5,
         },
         {
-            url: 'https://dothevinh.com/case-studies/h2all-fastlink',
+            url: `${baseUrl}/case-studies/h2all-fastlink`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: "monthly",
             priority: 0.9,
         },
-    ]
+    ];
 }
