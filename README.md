@@ -1,5 +1,8 @@
 # Do The Vinh - Portfolio Website
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)](https://vinh-portfolio-self.vercel.app/)
+[**View Live Demo**](https://vinh-portfolio-self.vercel.app/)
+
 A modern, production-ready portfolio website built with Next.js 14+ (App Router), TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Features
