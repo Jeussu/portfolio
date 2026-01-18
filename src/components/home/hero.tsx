@@ -31,11 +31,11 @@ export function Hero() {
                             Hi, I&apos;m Do The Vinh.
                         </h1>
                         <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground mb-8">
-                            Backend Developer (.NET) – Logistics & Warehouse Systems
+                            Full-Stack .NET Desktop Developer (WPF/WinForms) – Logistics & ERP Systems
                         </h2>
                         <p className="text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                            3 years building robust ERP/Logistics systems. Specialized in multi-tier .NET architecture,
-                            SQL Server optimization, and complex warehouse workflows.
+                            3 years building robust ERP/Logistics systems. Specialized in end-to-end development:
+                            WPF/WinForms UI, multi-tier .NET architecture, and SQL Server optimization.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
@@ -46,9 +46,10 @@ export function Hero() {
                             </Button>
                             <Button variant="outline" size="lg" className="h-12 px-8 text-base" asChild>
                                 <a href={PROFILE.cvLink} target="_blank" rel="noopener noreferrer">
-                                    View CV <ArrowRight className="ml-2 h-5 w-5" />
+                                    View CV <Download className="ml-2 h-5 w-5" />
                                 </a>
                             </Button>
+                            <span className="text-xs text-muted-foreground mt-2 ml-2 self-center hidden md:inline-block">Updated: Dec 2025</span>
                             <Button variant="ghost" size="lg" className="h-12 px-8 text-base" asChild>
                                 <Link href="/contact">
                                     Contact Me <Mail className="ml-2 h-5 w-5" />

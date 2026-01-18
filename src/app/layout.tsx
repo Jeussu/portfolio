@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Do The Vinh | Backend Developer (.NET) – Logistics & Warehouse Systems",
-  description: "Portfolio of Do The Vinh, a Backend Developer with 3 years experience building ERP/Logistics systems using .NET, SQL Server, and Cloud technologies.",
+  title: "Do The Vinh | Full-Stack .NET Desktop Developer (WPF/WinForms)",
+  description: "Portfolio of Do The Vinh, a Full-Stack .NET Desktop Developer (WPF/WinForms) specialized in high-performance Logistics & ERP Systems.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://vinh-portfolio-self.vercel.app",
-    title: "Do The Vinh | Backend Developer (.NET)",
-    description: "Specialized in High-Performance Logistics & Warehouse Systems.",
+    title: "Do The Vinh | Full-Stack .NET Desktop Developer",
+    description: "Specialized in Logistics & ERP Systems (WPF, WinForms, SQL Server).",
     siteName: "Do The Vinh Portfolio",
   },
 };

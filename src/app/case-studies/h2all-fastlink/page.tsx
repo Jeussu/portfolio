@@ -42,9 +42,9 @@ export default function H2AllCaseStudy() {
                             <div className="bg-muted/50 p-6 rounded-lg border-l-4 border-primary">
                                 <h4 className="font-semibold mb-2">My Role</h4>
                                 <p className="text-muted-foreground">
-                                    Lead Backend Developer responsible for core architecture, database optimization,
-                                    and the implementation of Warehouse V3, Checkpoint, and Finance modules.
-                                    Worked directly with the CTO and Operations team.
+                                    Full-Stack Desktop Developer (WPF/WinForms) responsible for end-to-end delivery:
+                                    from database schema design and Business Logic implementation to building complex WinForms UI.
+                                    Collaborated directly with the CTO and Operations team.
                                 </p>
                             </div>
                         </section>
