@@ -12,10 +12,9 @@ export function FeaturedCaseStudy() {
             <div className="container px-4 mx-auto">
                 <div className="mb-10">
                     <Badge className="mb-4" variant="secondary">Featured Case Study</Badge>
-                    <h2 className="text-3xl font-bold tracking-tight mb-4">H2ALL / FastLink ERP System</h2>
+                    <h2 className="text-3xl font-bold tracking-tight mb-4">H2ALL / FastLink Ecosystem</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl">
-                        A comprehensive Logistics & Warehouse Management System handling high-volume transactions,
-                        complex inventory workflows, and multi-branch operations.
+                        An end-to-end ERP system managing the complete logistics lifecycle from warehousing to last-mile delivery.
                     </p>
                 </div>
 
@@ -32,28 +31,28 @@ export function FeaturedCaseStudy() {
                                     <Server className="text-blue-600 h-8 w-8" />
                                     <div>
                                         <h4 className="font-semibold">Multi-tier Architecture</h4>
-                                        <p className="text-sm text-muted-foreground">WinForms + Service Layer + DTOs</p>
+                                        <p className="text-sm text-muted-foreground">WinForms Client ↔ WCF/REST ↔ SQL</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4 p-4 rounded-lg bg-background border">
                                     <Database className="text-blue-600 h-8 w-8" />
                                     <div>
-                                        <h4 className="font-semibold">Data Optimization</h4>
-                                        <p className="text-sm text-muted-foreground">~30% Lower Query Cost</p>
+                                        <h4 className="font-semibold">High-Volume Performance</h4>
+                                        <p className="text-sm text-muted-foreground">Batch processing 30k+ rows.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4 p-4 rounded-lg bg-background border">
                                     <Box className="text-blue-600 h-8 w-8" />
                                     <div>
                                         <h4 className="font-semibold">Warehouse V3</h4>
-                                        <p className="text-sm text-muted-foreground">Standardized Inbound/Outbound/Inventory</p>
+                                        <p className="text-sm text-muted-foreground">Standardized Inbound/Outbound</p>
                                     </div>
                                 </div>
                             </div>
 
                             <p className="text-muted-foreground leading-relaxed">
-                                Designed to replace legacy systems, reducing report runtimes by ~40%.
-                                Seamlessly integrates Finance, Checkpoint Handover, and E-commerce flows.
+                                Handles high-volume transactional data with strict consistency requirements.
+                                Integrating seamlessly with scales, printers, and external carrier APIs.
                             </p>
 
                             <Button asChild size="lg" className="w-full md:w-auto">

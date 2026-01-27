@@ -1,8 +1,8 @@
 export const PROFILE = {
     name: "Do The Vinh",
-    title: "Full-Stack .NET Desktop Developer (WPF/WinForms) – Logistics & ERP Systems",
+    title: "Full-Stack .NET Developer (Desktop + Services)",
     location: "Hanoi, Vietnam",
-    summary: "3 years building ERP/Logistics systems (H2ALL/FastLink) using multi-tier .NET architecture. Specialized in end-to-end development: robust WPF/WinForms UI, complex Business Logic, and SQL Server performance tuning for high-volume Warehouse & Checkpoint operations.",
+    summary: "Orchestrating scalable WinForms/WPF systems and .NET 8 services. Expert in multi-tier architecture, SQL performance tuning, and optimizing high-volume logistics operations for H2ALL/FastLink.",
     cvLink: "https://drive.google.com/file/d/10wdQDhaehoLF9H0JlTtEFaPUCnCRPFhZ/view?usp=sharing",
     email: "vinhdt1406@gmail.com",
     phone: "+84 964 063 455",
@@ -11,17 +11,17 @@ export const PROFILE = {
 }
 
 export const METRICS = [
-    { label: "Report Runtime Reduced", value: "~40%", description: "Optimized critical financial reports" },
-    { label: "DB Query Cost Lowered", value: "~30%", description: "Through execution plan tuning and indexing" },
-    { label: "Warehouses Standardized", value: "Multiple", description: "Across branches with V3 workflow" }
+    { label: "~40% Report Runtime Reduced", value: "Performance", description: "Optimized critical financial reports via execution plan tuning & SQL indexing." },
+    { label: "30k+ Rows Batch Processing", value: "Scalability", description: "Implemented distinct key extraction & 200-ID batching strategy to eliminate timeouts." },
+    { label: "Multi-Branch Standardization", value: "Scale", description: "Rolled out standardized Warehouse V3 workflows across multiple branches." }
 ]
 
 export const SKILLS = {
-    languages: ["C#", ".NET", "WPF", "WinForms", "LINQ", "ASP.NET Core"],
-    data: ["SQL Server", "MySQL", "Indexing", "Batching", "Execution Plans", "Entity Framework"],
-    architecture: ["Multi-tier (BL/DL/DTO)", "Event-Driven", "DTO contracts", "TransactionScope"],
-    domain: ["Logistics & ERP", "Warehouse V3", "Checkpoint/Handover", "Finance/Revenue", "GPS"],
-    tools: ["DevExpress", "Git/GitHub", "GitHub Actions CI", "Azure App Service"]
+    desktop: ["C# .NET Framework (4.8+)", "WinForms / WPF", "DevExpress UI Suite", "ClickOnce Deployment", "Multi-threading / Async"],
+    backend: [".NET 8 / .NET Core", "WCF (SOAP)", "ASP.NET WebAPI (REST)", "Windows Services", "IIS Hosting"],
+    data: ["SQL Server (T-SQL)", "MySQL", "Entity Framework / Dapper", "Performance Tuning", "SSAS / Data Warehousing"],
+    ops: ["Git / GitHub Actions", "CI/CD Pipelines", "Unit Testing (xUnit)", "Docker (Basics)", "Quartz.NET (Scheduling)"],
+    domain: ["Logistics & Supply Chain", "ERP / WMS (Warehouse)", "Financial Accounting", "Multi-tier Architecture", "Event-Driven Design"]
 }
 
 export const PROJECTS = [
@@ -65,23 +65,24 @@ export const EXPERIENCE = [
         company: "HNC International",
         role: "Full-Stack .NET Desktop Developer (WPF/WinForms)",
         period: "02/2023 – Present",
-        description: "Develop and maintain the H2ALL/FastLink ERP ecosystem. Responsible for end-to-end delivery of desktop modules: from DB schema design to Business Logic and WinForms UI.",
+        description: "Develop and maintain core modules of the H2ALL ERP system using .NET Framework 4.8 and .NET 8.",
         achievements: [
-            "Performance: Reduced report runtimes by ~40% and DB query cost by ~30% through batching, tuned indexes, and execution-plan improvements.",
-            "Warehouse V3 rollout: Standardized inbound/outbound workflows, cell/location mapping, and stock counting across branches.",
-            "End-to-End Ownership: Built full-stack features for Checkpoint, Finance, and GPS modules using multi-tier architecture (WinForms Client ↔ WCF/API ↔ BL ↔ DL ↔ SQL).",
-            "Reporting Platform: Created reusable DevExpress templates and parameterized queries, accelerating financial reporting delivery.",
-            "DevOps & Quality: Maintained Git workflows, GitHub Actions CI/CD pipelines, and contributed to code review standards."
+            "Engineered a high-performance batching mechanism to process 30k+ records, eliminating timeout issues.",
+            "Optimized SQL Server performance, reducing query costs by ~30% via execution plan analysis and indexing.",
+            "Designed a robust multi-tier architecture ensuring clean separation between WinForms UI, WCF Business Services, and Data Layers.",
+            "Integrated hardware peripherals (scales, printers) and external APIs for seamless logistics operations.",
+            "Automated build and deployment processes using GitHub Actions and ClickOnce technology."
         ]
     },
     {
         company: "FPT Software",
-        role: ".NET Core Backend Developer",
+        role: ".NET Backend Developer",
         period: "06/2022 – 01/2023",
-        description: "Built and optimized REST APIs for high-read endpoints; introduced caching and query tuning to lower latency.",
+        description: "Developed scalable REST APIs using .NET Core for high-traffic enterprise applications.",
         achievements: [
-            "Collaborated with BA/QA to refine requirements; participated in code reviews and API hardening.",
-            "Stack: .NET Core, SQL Server, Git, CI/CD."
+            "Implemented aggressive caching strategies and optimized SQL queries to minimize API latency.",
+            "Contributed to API hardening, logging standards, and unit testing coverage.",
+            "Collaborated in Agile teams to deliver features and resolve defects in a timely manner."
         ]
     },
     {
@@ -105,51 +106,78 @@ export const UPSKILL_PLAN = [
     },
     {
         week: 2,
-        title: "Testing & Architecture",
-        topics: ["xUnit", "Moq (40+ tests)", "MongoDB Read Model", "Clean Architecture"],
+        title: "Testing & Quality Assurance",
+        topics: ["xUnit", "Moq (40+ tests)", "Service Layer Validation", "Clean Architecture"],
         status: "in-progress"
     },
     {
         week: 3,
-        title: "Event-Driven & Workflow",
-        topics: ["RabbitMQ/MassTransit", "Approval Workflow", "Idempotency"],
+        title: "Event-Driven Architecture",
+        topics: ["RabbitMQ/MassTransit", "Async Messaging", "Decoupling Logic"],
         status: "pending"
     },
     {
         week: 4,
-        title: "DevOps & Gateway",
-        topics: ["YARP Gateway", "GitHub Actions CI", "Azure Deployment"],
+        title: "Containerization & Orchestration",
+        topics: ["Docker", "Docker Compose", "Multi-Container Setup"],
+        status: "pending"
+    },
+    {
+        week: 5,
+        title: "API Gateway & Security",
+        topics: ["YARP Gateway", "IdentityServer", "Centralized Auth"],
+        status: "pending"
+    },
+    {
+        week: 6,
+        title: "Observability",
+        topics: ["OpenTelemetry", "ELK Stack", "Distributed Tracing"],
         status: "pending"
     }
 ]
 
 export const CASE_STUDY = {
-    title: "H2ALL/FastLink",
+    title: "H2ALL / FastLink Ecosystem",
     role: "Full-Stack .NET Desktop Developer",
     duration: "2023 - Present",
-    overview: "A comprehensive ERP/Logistics system managing the entire lifecycle of freight forwarding, from warehousing to last-mile delivery. The system handles high-volume transactions for inbound/outbound processing, financial reconciliation, and cross-border customs clearance.",
+    overview: "An end-to-end ERP system managing the complete logistics lifecycle from warehousing to last-mile delivery. The system handles high-volume transactional data with strict consistency requirements, integrating seamlessly with scales, printers, and external carrier APIs.",
     architecture: {
-        description: "Multi-tier architecture ensuring separation of concerns and scalability.",
+        description: "Multi-Tier .NET Ecosystem ensuring separation of concerns and reusability.",
         layers: [
-            "Client: WinForms (Heavy Client) for high-density data entry.",
-            "Network Tier: WCF/REST services handling communication.",
-            "Business Logic (BL): Domain rules, transaction management (TransactionScope).",
-            "Data Logic (DL): SQL Server/MySQL interactions, Stored Procedures, BulkCopy."
+            "Client Layer: WinForms (.NET Framework 4.8) distributed via ClickOnce; utilized DevExpress for rich UI and Reporting.",
+            "Network Tier: Hybrid communication using WCF (BasicHttpBinding/SOAP) for internal services and a REST Gateway (/api/_gateway) for external integrations.",
+            "Business Layer: Domain-centric logic encapsulated in service tiers.",
+            "Data Layer: Optimized access to SQL Server & MySQL using DTO contracts and stored procedures."
         ]
     },
     boundedContexts: [
-        { name: "Warehouse V3", description: "Inbound, Outbound, Inventory, Location-Cell logic, Stock Counting." },
-        { name: "Checkpoint", description: "Handover, POD (Proof of Delivery), Cross-border customs, DRS." },
-        { name: "Finance", description: "Revenue/Cost calculation, AR/AP, Invoicing, Daily Sales Reports." },
-        { name: "HR Framework", description: "Employee profiles, Payroll, Attendance, Approval workflows." }
+        { name: "Warehouse V3 (WMS)", description: "Inbound/Outbound workflow, Granular Inventory (Location-Cell), Stock Counting." },
+        { name: "Operations & Checkpoint", description: "Handover tracking (POD), Cross-border routing, Peripheral integration (Scales/Scanners)." },
+        { name: "Finance & Accounting", description: "Revenue/Cost automation, AR/Debt management, Dynamic financial reporting." },
+        { name: "HR & Workflow", description: "Employee profiles, Payroll calculation, Approval workflows." }
     ],
     workflow: [
-        { step: "WinForms UI", description: "User triggers action (e.g., Create Inbound)" },
-        { step: "Handler", description: "Auth, Session Policy, Request Validation" },
-        { step: "Business Logic", description: "Transactional processing, Inventory calculation" },
-        { step: "Data Layer", description: "Efficient SQL execution (Bulk Insert, SPs)" }
+        { step: "Challenge", description: "Search results and reporting queries exceeding 30,000 rows caused timeouts." },
+        { step: "Solution", description: "Implemented 'Divide & Conquer' batching strategy with distinct key extraction." },
+        { step: "Optimization", description: "Analyzed Execution Plans for targeted indexing; offloaded heavy aggregations to SQL." },
+        { step: "Outcome", description: "Reduced critical report runtime by ~40% and eliminated timeout errors." }
     ]
 }
+
+export const AI_STRATEGIES = [
+    {
+        title: "Prompt Engineering",
+        description: "Utilized structured prompts to scaffold domain entities, DTOs, and Service interfaces, reducing boilerplate coding time by 30%."
+    },
+    {
+        title: "Optimization Analysis",
+        description: "Leveraged AI to interpret complex SQL execution plans and suggest index strategies for legacy query optimization."
+    },
+    {
+        title: "Verification & Triage",
+        description: "Generated anonymized test scenarios and unit tests from business requirements to validate logic before deployment."
+    }
+]
 
 export const CERTIFICATES = [
     {

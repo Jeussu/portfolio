@@ -10,11 +10,11 @@ export function Skills() {
                 <h2 className="text-3xl font-bold mb-12 text-center">Technical Expertise</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <SkillCategory title="Languages & Frameworks" skills={SKILLS.languages} />
+                    <SkillCategory title="Desktop & Client" skills={SKILLS.desktop} />
+                    <SkillCategory title="Services & Backend" skills={SKILLS.backend} />
                     <SkillCategory title="Data & Storage" skills={SKILLS.data} />
-                    <SkillCategory title="Architecture" skills={SKILLS.architecture} />
+                    <SkillCategory title="Delivery & DevOps" skills={SKILLS.ops} />
                     <SkillCategory title="Domain Knowledge" skills={SKILLS.domain} />
-                    <SkillCategory title="Tools & Delivery" skills={SKILLS.tools} />
                 </div>
             </div>
         </section>

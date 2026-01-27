@@ -18,14 +18,13 @@ export default function H2AllCaseStudy() {
                         <Badge className="mb-4" variant="secondary">Case Study</Badge>
                         <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6">H2ALL / FastLink Ecosystem</h1>
                         <p className="text-xl text-muted-foreground leading-relaxed">
-                            A mission-critical Logistics & Warehouse system orchestrating the entire supply chain
-                            lifecycle from Inbound to Last-mile Delivery.
+                            An end-to-end ERP system managing the complete logistics lifecycle from warehousing to last-mile delivery.
                         </p>
                         <div className="flex flex-wrap gap-2 mt-6">
-                            <Badge variant="outline">.NET Core / Framework</Badge>
-                            <Badge variant="outline">SQL Server</Badge>
-                            <Badge variant="outline">WinForms</Badge>
-                            <Badge variant="outline">High Volume</Badge>
+                            <Badge variant="outline">.NET 8 / Framework 4.8</Badge>
+                            <Badge variant="outline">SQL Server / MySQL</Badge>
+                            <Badge variant="outline">WinForms (ClickOnce)</Badge>
+                            <Badge variant="outline">WCF / REST</Badge>
                         </div>
                     </div>
 
@@ -35,16 +34,13 @@ export default function H2AllCaseStudy() {
                         <section id="overview" className="scroll-mt-24">
                             <h2 className="text-2xl font-bold mb-4">Overview</h2>
                             <p className="text-lg leading-relaxed mb-6">
-                                FastLink faced scalability challenges with their legacy logistics platform as order volumes surged.
-                                The H2ALL V3 architecture was introduced to standardize workflows across multiple warehouse branches,
-                                optimize financial reporting, and integrate real-time tracking (GPS) and E-commerce platforms.
+                                FastLink required a robust solution to handle surging order volumes and unify operations across branches.
+                                The system manages high-volume transactional data with strict consistency requirements, integrating seamless workflows for Warehouse (WMS), Checkpoint, and Finance.
                             </p>
                             <div className="bg-muted/50 p-6 rounded-lg border-l-4 border-primary">
-                                <h4 className="font-semibold mb-2">My Role</h4>
+                                <h4 className="font-semibold mb-2">My Role: Full-Stack .NET Desktop Developer</h4>
                                 <p className="text-muted-foreground">
-                                    Full-Stack Desktop Developer (WPF/WinForms) responsible for end-to-end delivery:
-                                    from database schema design and Business Logic implementation to building complex WinForms UI.
-                                    Collaborated directly with the CTO and Operations team.
+                                    Solely responsible for end-to-end delivery of key desktop modules. Translated complex logistics requirements into robust WinForms UI and efficient backend logic. Managed the full lifecycle from Schema Design to Deployment.
                                 </p>
                             </div>
                         </section>
@@ -52,8 +48,7 @@ export default function H2AllCaseStudy() {
                         <section id="architecture" className="scroll-mt-24">
                             <h2 className="text-2xl font-bold mb-6">System Architecture</h2>
                             <p className="mb-6 text-muted-foreground">
-                                The solution utilizes a robust multi-tier architecture to ensure separation of concerns and
-                                transactional integrity across the distributed system.
+                                Multi-Tier .NET Ecosystem ensuring separation of concerns. Hybrid communication using WCF (internal) and REST Gateway (external).
                             </p>
                             <ArchitectureDiagram />
                         </section>
@@ -61,14 +56,13 @@ export default function H2AllCaseStudy() {
                         <section id="lifecycle" className="scroll-mt-24">
                             <h2 className="text-2xl font-bold mb-8">Request Lifecycle</h2>
                             <div className="space-y-0">
-                                {/* Stepper items */}
                                 {[
-                                    { title: "WinForms UI", desc: "User triggers action (e.g., 'Confirm Inbound'). Input validation happens here." },
-                                    { title: "Network Call", desc: "Encrypted request sent over TCP/HTTP to Load Balancer/App Server." },
-                                    { title: "Handler Layer", desc: "Authentication, Section Policy check, and Request Deserialization." },
-                                    { title: "Business Logic (BL)", desc: "Orchestrates the transaction. Validates rules (e.g., 'Is cell empty?')." },
-                                    { title: "Data Layer (DL)", desc: "Executes SQL Command / Stored Procedure within the TransactionScope." },
-                                    { title: "Response", desc: "DTO returned to UI. State updated." }
+                                    { title: "WinForms UI", desc: "Heavy Client (.NET 4.8) via ClickOnce. High-density data entry." },
+                                    { title: "Gateway / Network", desc: "WCF (SOAP) for internal services, wrapper API for integrations." },
+                                    { title: "Handler Layer", desc: "Auth, Session Policy, Request Deserialization & Validation." },
+                                    { title: "Business Logic (BL)", desc: "Domain-centric logic. TransactionScope ensures atomicity." },
+                                    { title: "Data Layer (DL)", desc: "DTO contracts mapping to SQL Stored Procedures." },
+                                    { title: "Database", desc: "SQL Server / MySQL optimized with indexing & batching." }
                                 ].map((step, i) => (
                                     <div key={i} className="flex gap-4 relative group">
                                         <div className="flex flex-col items-center">
@@ -87,103 +81,71 @@ export default function H2AllCaseStudy() {
                         </section>
 
                         <section id="contexts" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold mb-6">Bounded Contexts</h2>
+                            <h2 className="text-2xl font-bold mb-6">Key Domain Areas</h2>
                             <div className="grid md:grid-cols-2 gap-6">
-                                <ContextCard title="Warehouse V3" icon={<Database className="h-5 w-5 text-primary" />}>
-                                    Inbound, Outbound, Inventory, Location-Cell Management, Transfers, Stock Counting.
+                                <ContextCard title="Warehouse V3 (WMS)" icon={<Database className="h-5 w-5 text-primary" />}>
+                                    Inbound/Outbound workflows, Granular Inventory (Location-Cell mapping), Stock Counting and adjustments.
                                 </ContextCard>
-                                <ContextCard title="Checkpoint" icon={<TrendingUp className="h-5 w-5 text-primary" />}>
-                                    Check-in/out, Customs Handover, DRS (Delivery Run Sheet), POD (Proof of Delivery), Tracking.
+                                <ContextCard title="Operations & Checkpoint" icon={<TrendingUp className="h-5 w-5 text-primary" />}>
+                                    Tracking freight movement, Handover (POD), Cross-border routing, and Peripheral integration (Scales/Scanners).
                                 </ContextCard>
-                                <ContextCard title="Finance" icon={<Zap className="h-5 w-5 text-primary" />}>
-                                    Pricing Tables, Invoicing, AR (Accounts Receivable), Cost Allocation, Revenue Reporting.
+                                <ContextCard title="Finance & Accounting" icon={<Zap className="h-5 w-5 text-primary" />}>
+                                    Automated Revenue/Cost calculation, AR/Debt management, Invoicing, and Dynamic financial reporting.
                                 </ContextCard>
-                                <ContextCard title="Integrations" icon={<Globe className="h-5 w-5 text-primary" />}>
-                                    E-commerce (Shopee/Lazada APIs), Last-mile partners (NinjaVan, USPS), GPS Tracking.
+                                <ContextCard title="HR & Workflow" icon={<Globe className="h-5 w-5 text-primary" />}>
+                                    Employee profile management, Payroll calculation, Attendance tracking, and Multi-level approval workflows.
                                 </ContextCard>
                             </div>
                         </section>
 
-                        <section id="flows" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold mb-6">Core Business Flows</h2>
-                            <div className="space-y-6">
-                                <div className="p-6 border rounded-xl bg-card">
-                                    <h3 className="font-semibold mb-3">📦 Inbound Process</h3>
-                                    <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                                        <span className="px-3 py-1 bg-muted rounded-full">Create Request</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">Map Location/Cell</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">Write Inbound + Update Inventory (Atomic)</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">Logs/Reports</span>
-                                    </div>
-                                </div>
-                                <div className="p-6 border rounded-xl bg-card">
-                                    <h3 className="font-semibold mb-3">🚚 Checkpoint Handover</h3>
-                                    <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                                        <span className="px-3 py-1 bg-muted rounded-full">Booking</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">Check-in</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">Customs</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">Handover</span>
-                                        <span className="text-muted-foreground/50">→</span>
-                                        <span className="px-3 py-1 bg-muted rounded-full">DRS/POD</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section id="contributions" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold mb-6">Engineering Impact</h2>
+                        <section id="performance" className="scroll-mt-24">
+                            <h2 className="text-2xl font-bold mb-6">Performance & Scale</h2>
                             <div className="grid gap-6 md:grid-cols-2">
                                 <Card>
-                                    <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Zap className="text-amber-500 h-5 w-5" /> Performance Tuning</CardTitle></CardHeader>
+                                    <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Zap className="text-amber-500 h-5 w-5" /> 30k+ Rows Strategy</CardTitle></CardHeader>
                                     <CardContent>
-                                        <p className="text-muted-foreground mb-4">Reduced report runtimes by ~40% and query costs by ~30% through:</p>
+                                        <p className="text-muted-foreground mb-4">Resolved timeouts when processing large search results:</p>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                                            <li>Analyze Execution Plans to identify scan hot-spots.</li>
-                                            <li>Applied covering indexes and filtered indexes.</li>
-                                            <li>Refactored N+1 queries into bulk operations.</li>
+                                            <li>Implemented "Divide & Conquer" batching.</li>
+                                            <li>Extracted distinct keys first, then processed in batches of 200 IDs.</li>
+                                            <li>Offloaded heavy aggregations to SQL Layer.</li>
                                         </ul>
                                     </CardContent>
                                 </Card>
                                 <Card>
-                                    <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Lock className="text-blue-500 h-5 w-5" /> Transaction Management</CardTitle></CardHeader>
+                                    <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Lock className="text-blue-500 h-5 w-5" /> Database Optimization</CardTitle></CardHeader>
                                     <CardContent>
-                                        <p className="text-muted-foreground mb-4">Ensured data integrity across modules using `TransactionScope`.</p>
+                                        <p className="text-muted-foreground mb-4">Lowered DB query costs by ~30%:</p>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                                            <li>Implemented atomic operations for Inbound/Inventory updates.</li>
-                                            <li>Handled deadlocks by optimizing lock hierarchies.</li>
+                                            <li>Analyzed Execution Plans to find bottlenecks.</li>
+                                            <li>Applied targeted indexing and refactored N+1 queries.</li>
+                                            <li>Used parameterized queries to prevent injection and enable caching.</li>
                                         </ul>
                                     </CardContent>
                                 </Card>
                             </div>
                         </section>
 
-                        <section id="security" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold mb-4">Security & Governance</h2>
-                            <Card>
-                                <CardContent className="pt-6">
-                                    <p className="leading-relaxed text-muted-foreground">
-                                        Implemented a robust Handler-level security gate. Every request is intercepted to validate
-                                        <strong> Session Tokens</strong> and <strong>User Policy</strong> permissions before reaching Business Logic.
-                                        This ensures that only authorized personnel can trigger critical actions like 'Approve PO' or 'Adjust Inventory'.
-                                    </p>
-                                </CardContent>
-                            </Card>
+                        <section id="tooling" className="scroll-mt-24">
+                            <h2 className="text-2xl font-bold mb-6">Tooling & Delivery</h2>
+                            <div className="bg-card border rounded-xl p-6">
+                                <ul className="grid md:grid-cols-2 gap-4">
+                                    <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> <span><strong>ClickOnce:</strong> Automated client updates.</span></li>
+                                    <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> <span><strong>GitHub Actions:</strong> CI/CD pipelines.</span></li>
+                                    <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> <span><strong>DevExpress:</strong> Rich UI & Reporting.</span></li>
+                                    <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> <span><strong>Internal Tools:</strong> Code Generator & Refactory.</span></li>
+                                </ul>
+                            </div>
                         </section>
 
                         <section id="outcomes" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold mb-6">Outcomes & Lessons</h2>
+                            <h2 className="text-2xl font-bold mb-6">Outcomes</h2>
                             <ul className="space-y-4">
                                 {[
-                                    "Successfully migrated 3 branches to Warehouse V3 without downtime.",
-                                    "Standardized the check-in/out process, reducing manual errors by 50%.",
-                                    "Finance reports now run in seconds instead of minutes, enabling real-time decision making.",
-                                    "Learned the importance of strict DTO contracts for maintaining backward compatibility."
+                                    "Reduced critical report generation time by ~40%.",
+                                    "Lowered database query costs by ~30% through rigorous optimization.",
+                                    "Rolled out standardized Warehouse V3 workflows across multiple branches.",
+                                    "Delivered stable, zero-downtime updates to users via optimized deployment pipelines."
                                 ].map((outcome, i) => (
                                     <li key={i} className="flex gap-4 items-start p-4 border rounded-lg bg-background/50">
                                         <div className="mt-1 bg-green-100 dark:bg-green-900/30 p-1 rounded-full">

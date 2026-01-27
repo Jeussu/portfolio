@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, Circle } from "lucide-react";
-import { UPSKILL_PLAN } from "@/lib/data";
+import { UPSKILL_PLAN, AI_STRATEGIES } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export default function UpskillPage() {
@@ -108,6 +108,26 @@ export default function UpskillPage() {
                                     })}
                                 </ul>
                             </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+
+            {/* AI Strategies Section */}
+            <div className="mt-20">
+                <h2 className="text-3xl font-bold mb-8 text-center">AI-Assisted Development</h2>
+                <div className="grid gap-6 md:grid-cols-3">
+                    {AI_STRATEGIES.map((strategy, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-card p-6 rounded-xl border border-border shadow-sm"
+                        >
+                            <h3 className="font-bold text-lg mb-2 text-primary">{strategy.title}</h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{strategy.description}</p>
                         </motion.div>
                     ))}
                 </div>
