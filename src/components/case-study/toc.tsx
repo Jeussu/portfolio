@@ -1,17 +1,19 @@
 "use client"
 
 import * as React from "react"
+
 import { cn } from "@/lib/utils"
 
 const sections = [
     { id: "overview", label: "Overview" },
-    { id: "architecture", label: "Architecture" },
-    { id: "lifecycle", label: "Request Lifecycle" },
-    { id: "contexts", label: "Bounded Contexts" },
-    { id: "flows", label: "Business Flows" },
-    { id: "contributions", label: "Engineering Impact" },
-    { id: "security", label: "Security" },
-    { id: "outcomes", label: "Outcomes" },
+    { id: "business-context", label: "Business Context" },
+    { id: "platform", label: "What the Platform Is" },
+    { id: "architecture", label: "Architecture Direction" },
+    { id: "scope", label: "My Scope" },
+    { id: "problems", label: "Key Problems I Worked On" },
+    { id: "reconciliation", label: "Representative Contribution" },
+    { id: "performance", label: "Performance & Data Handling" },
+    { id: "backend-fit", label: "Why This Matters for Backend Roles" },
 ]
 
 export function TOC() {
@@ -38,22 +40,22 @@ export function TOC() {
     }, [])
 
     return (
-        <nav className="sticky top-24 hidden lg:block w-64 p-4 h-fit max-h-[calc(100vh-6rem)] overflow-y-auto pl-8">
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground">Contents</h4>
+        <nav className="sticky top-24 hidden h-fit max-h-[calc(100vh-6rem)] w-64 overflow-y-auto p-4 pl-8 lg:block">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Contents</h4>
             <ul className="space-y-3 text-sm">
                 {sections.map((section) => (
                     <li key={section.id}>
                         <a
                             href={`#${section.id}`}
                             className={cn(
-                                "block py-1 pl-4 border-l-2 transition-colors hover:text-foreground",
+                                "block border-l-2 py-1 pl-4 transition-colors hover:text-foreground",
                                 activeSection === section.id
-                                    ? "border-primary text-primary font-medium"
+                                    ? "border-primary font-medium text-primary"
                                     : "border-transparent text-muted-foreground hover:border-muted-foreground"
                             )}
                             onClick={(e) => {
                                 e.preventDefault()
-                                document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' })
+                                document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" })
                                 setActiveSection(section.id)
                             }}
                         >

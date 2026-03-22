@@ -13,7 +13,7 @@ const navItems = [
     { name: "Case Study", href: "/case-studies/h2all-fastlink" },
     { name: "Projects", href: "/projects" },
     { name: "Experience", href: "/experience" },
-    { name: "Upskill", href: "/upskill" },
+    { name: "Backend Growth", href: "/upskill" },
     { name: "Contact", href: "/contact" },
 ];
 
@@ -48,6 +48,7 @@ export function Navbar() {
                     <ThemeToggle />
                     <button
                         onClick={() => setIsOpen(!isOpen)}
+                        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
                         className="inline-flex items-center justify-center rounded-md p-2 text-foreground/50 hover:bg-accent hover:text-accent-foreground focus:outline-none"
                     >
                         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

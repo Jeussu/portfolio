@@ -1,51 +1,56 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { EXPERIENCE, CERTIFICATES } from "@/lib/data";
-import { Briefcase, Calendar, Award, X } from "lucide-react";
-import Image from "next/image";
+import Image from "next/image"
+import { useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Award, Briefcase, Calendar, X } from "lucide-react"
+
+import { CERTIFICATES, EXPERIENCE } from "@/lib/data"
 
 export default function ExperiencePage() {
-    const [selectedCert, setSelectedCert] = useState<typeof CERTIFICATES[number] | null>(null);
+    const [selectedCert, setSelectedCert] = useState<typeof CERTIFICATES[number] | null>(null)
+
     return (
         <div className="container mx-auto px-4 py-12">
-            <div className="max-w-2xl mx-auto mb-20">
-                <h1 className="text-4xl font-bold mb-12 text-center">Work Experience</h1>
+            <div className="mx-auto mb-20 max-w-3xl">
+                <div className="mb-12 text-center">
+                    <h1 className="mb-4 text-4xl font-bold">Experience</h1>
+                    <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                        Enterprise ERP/logistics experience across finance workflows, reporting accuracy,
+                        hybrid services, and end-to-end backend tracing.
+                    </p>
+                </div>
 
-                <div className="relative border-l border-border ml-3 md:ml-6 space-y-12 pb-12">
+                <div className="relative ml-3 space-y-12 border-l border-border pb-12 md:ml-6">
                     {EXPERIENCE.map((exp, index) => (
                         <motion.div
-                            key={index}
+                            key={exp.company}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.2 }}
                             className="relative pl-8 md:pl-12"
                         >
-                            {/* Timeline Dot */}
                             <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border border-primary bg-background ring-4 ring-background" />
 
-                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <div className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
                                 <h3 className="text-xl font-bold text-foreground">{exp.company}</h3>
-                                <div className="flex items-center text-sm text-muted-foreground mt-1 sm:mt-0">
-                                    <Calendar className="h-3 w-3 mr-1" />
+                                <div className="mt-1 flex items-center text-sm text-muted-foreground sm:mt-0">
+                                    <Calendar className="mr-1 h-3 w-3" />
                                     {exp.period}
                                 </div>
                             </div>
 
-                            <div className="flex items-center text-primary font-medium mb-4">
-                                <Briefcase className="h-4 w-4 mr-2" />
+                            <div className="mb-4 flex items-center font-medium text-primary">
+                                <Briefcase className="mr-2 h-4 w-4" />
                                 {exp.role}
                             </div>
 
-                            <p className="text-muted-foreground mb-4 italic">
-                                {exp.description}
-                            </p>
+                            <p className="mb-4 italic text-muted-foreground">{exp.description}</p>
 
                             <ul className="space-y-2">
                                 {exp.achievements.map((item, i) => (
-                                    <li key={i} className="flex items-start text-sm md:text-base text-foreground/90">
-                                        <span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0" />
+                                    <li key={i} className="flex items-start text-sm text-foreground/90 md:text-base">
+                                        <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -55,26 +60,29 @@ export default function ExperiencePage() {
                 </div>
             </div>
 
-            <div className="max-w-4xl mx-auto">
+            <div className="mx-auto max-w-4xl">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="text-3xl font-bold mb-12 text-center"
+                    className="mb-4 text-center text-3xl font-bold"
                 >
-                    Certificates & Awards
+                    Education & Selected Credentials
                 </motion.h2>
+                <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
+                    Selected background items that support the .NET/backend profile without competing with production experience.
+                </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {CERTIFICATES.map((cert, index) => (
                         <motion.div
                             layoutId={`cert-${cert.title}`}
-                            key={index}
+                            key={cert.title}
                             onClick={() => setSelectedCert(cert)}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 + index * 0.1 }}
-                            className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
+                            className="group cursor-pointer overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
                         >
                             <div className="relative h-48 w-full bg-muted">
                                 <motion.div layoutId={`image-${cert.title}`} className="relative h-full w-full">
@@ -87,17 +95,17 @@ export default function ExperiencePage() {
                                 </motion.div>
                             </div>
                             <div className="p-6">
-                                <div className="flex items-start justify-between mb-2">
-                                    <Award className="h-5 w-5 text-primary shrink-0 mt-1" />
-                                    <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full border border-border">
+                                <div className="mb-2 flex items-start justify-between">
+                                    <Award className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                                    <span className="rounded-full border border-border bg-muted px-2 py-1 text-xs text-muted-foreground">
                                         {cert.date}
                                     </span>
                                 </div>
-                                <motion.h3 layoutId={`title-${cert.title}`} className="font-bold text-lg mb-1 leading-tight">{cert.title}</motion.h3>
-                                <p className="text-sm text-primary font-medium mb-3">{cert.issuer}</p>
-                                <p className="text-sm text-muted-foreground">
-                                    {cert.description}
-                                </p>
+                                <motion.h3 layoutId={`title-${cert.title}`} className="mb-1 text-lg font-bold leading-tight">
+                                    {cert.title}
+                                </motion.h3>
+                                <p className="mb-3 text-sm font-medium text-primary">{cert.issuer}</p>
+                                <p className="text-sm text-muted-foreground">{cert.description}</p>
                             </div>
                         </motion.div>
                     ))}
@@ -116,17 +124,17 @@ export default function ExperiencePage() {
                         />
                         <motion.div
                             layoutId={`cert-${selectedCert.title}`}
-                            className="relative bg-card border border-border rounded-xl overflow-hidden shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col"
+                            className="relative flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-xl border border-border bg-card shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setSelectedCert(null)}
-                                className="absolute top-4 right-4 z-10 p-2 bg-background/50 hover:bg-background rounded-full transition-colors"
+                                className="absolute right-4 top-4 z-10 rounded-full bg-background/50 p-2 transition-colors hover:bg-background"
                             >
                                 <X className="h-5 w-5" />
                             </button>
 
-                            <div className="relative w-full h-[50vh] sm:h-[60vh] bg-muted flex-shrink-0">
+                            <div className="relative h-[50vh] w-full flex-shrink-0 bg-muted sm:h-[60vh]">
                                 <motion.div layoutId={`image-${selectedCert.title}`} className="relative h-full w-full">
                                     <Image
                                         src={selectedCert.image}
@@ -137,26 +145,26 @@ export default function ExperiencePage() {
                                 </motion.div>
                             </div>
 
-                            <div className="p-6 sm:p-8 overflow-y-auto">
-                                <div className="flex items-start justify-between mb-4">
+                            <div className="overflow-y-auto p-6 sm:p-8">
+                                <div className="mb-4 flex items-start justify-between">
                                     <div className="flex items-center gap-2">
                                         <Award className="h-6 w-6 text-primary" />
-                                        <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full border border-border">
+                                        <span className="rounded-full border border-border bg-muted px-3 py-1 text-sm text-muted-foreground">
                                             {selectedCert.date}
                                         </span>
                                     </div>
                                 </div>
 
-                                <motion.h3 layoutId={`title-${selectedCert.title}`} className="text-2xl font-bold mb-2">{selectedCert.title}</motion.h3>
-                                <p className="text-lg text-primary font-medium mb-4">{selectedCert.issuer}</p>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    {selectedCert.description}
-                                </p>
+                                <motion.h3 layoutId={`title-${selectedCert.title}`} className="mb-2 text-2xl font-bold">
+                                    {selectedCert.title}
+                                </motion.h3>
+                                <p className="mb-4 text-lg font-medium text-primary">{selectedCert.issuer}</p>
+                                <p className="leading-relaxed text-muted-foreground">{selectedCert.description}</p>
                             </div>
                         </motion.div>
                     </div>
                 )}
             </AnimatePresence>
         </div>
-    );
+    )
 }
