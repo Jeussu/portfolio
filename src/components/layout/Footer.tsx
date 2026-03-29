@@ -5,10 +5,10 @@ import { PROFILE } from "@/lib/data"
 
 export function Footer() {
     return (
-        <footer className="border-t border-border/40 bg-background py-8">
-            <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
+        <footer className="border-t border-border/40 bg-background/95 py-8 backdrop-blur">
+            <div className="container mx-auto flex flex-col items-center justify-between gap-5 px-4 md:flex-row">
                 <div className="flex flex-col items-center md:items-start">
-                    <p className="text-sm font-medium">{PROFILE.name}</p>
+                    <p className="text-sm font-semibold tracking-tight">{PROFILE.name}</p>
                     <p className="mt-1 text-xs text-muted-foreground">{PROFILE.headline}</p>
                 </div>
 
@@ -42,7 +42,9 @@ export function Footer() {
 
                 <div className="text-center md:text-right">
                     <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} All rights reserved.</p>
-                    <p className="mt-1 text-xs text-muted-foreground">Focused on .NET backend opportunities in ERP/logistics systems, reporting, and workflow-heavy business applications.</p>
+                    <p className="mt-1 max-w-sm text-xs leading-6 text-muted-foreground">
+                        Focused on .NET backend opportunities in ERP/logistics systems, reporting, and workflow-heavy business applications.
+                    </p>
                 </div>
             </div>
         </footer>

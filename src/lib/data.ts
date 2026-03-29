@@ -83,6 +83,8 @@ export const PROJECTS = [
     {
         slug: "bulkybook-v2",
         title: "BulkyBook (v2)",
+        relevance:
+            "Public proof of ASP.NET Core MVC delivery across auth, admin workflows, and persistence-oriented backend thinking.",
         description:
             "Public ASP.NET Core MVC project used to demonstrate backend-oriented delivery across auth, admin workflows, reporting, and Stripe-backed checkout flows.",
         tags: ["ASP.NET Core MVC", "C#", "MySQL", "Identity", "Stripe", "Reporting"],
@@ -96,6 +98,8 @@ export const PROJECTS = [
     {
         slug: "portfolio-v1-to-v2",
         title: "Portfolio Website (V1 -> V2)",
+        relevance:
+            "Shows portfolio engineering, content hierarchy, and recruiter-facing UI refinement in support of the backend-first profile.",
         description:
             "A self-directed portfolio rebuild that evolved from a static HTML/CSS/JavaScript site into a structured Next.js/TypeScript experience with clearer recruiter-facing messaging, stronger case-study presentation, and better positioning for .NET backend roles. The two public repositories document that progression from the earlier version to the current portfolio.",
         tags: ["HTML5", "CSS3 / SCSS", "JavaScript", "Next.js", "TypeScript", "Responsive UI", "Content Architecture"],
@@ -115,6 +119,8 @@ export const PROJECTS = [
     {
         slug: "mini-h2all",
         title: "Mini H2ALL (Capstone)",
+        relevance:
+            "Transition work showing current backend growth in Web API, EF Core, PostgreSQL, messaging, and containerized development.",
         description:
             "Capstone/transition project used to strengthen Web API, persistence, messaging, and containerized development. Included as backend-growth work, not enterprise production.",
         tags: [".NET Web API", "EF Core", "PostgreSQL", "RabbitMQ", "Docker", "Capstone"],

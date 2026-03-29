@@ -10,12 +10,17 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
     return (
-        <div className="container mx-auto px-4 py-12">
-            <h1 className="mb-6 text-center text-4xl font-bold">Selected Supporting Projects</h1>
-            <p className="mx-auto mb-16 max-w-3xl text-center text-lg text-muted-foreground">
-                A concise public project set that supports backend delivery, portfolio engineering, and iterative
-                product thinking. The main enterprise production story remains the H2ALL / FastLink case study.
-            </p>
+        <div className="container mx-auto px-4 py-14 md:py-16">
+            <div className="mx-auto mb-14 max-w-4xl text-center">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+                    Supporting Public Work
+                </p>
+                <h1 className="text-4xl font-black tracking-tight md:text-5xl">Selected Projects</h1>
+                <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+                    A curated public project set that supports backend delivery, portfolio engineering, and transition work.
+                    The H2ALL / FastLink case study remains the primary enterprise proof point.
+                </p>
+            </div>
             <ProjectList />
         </div>
     )

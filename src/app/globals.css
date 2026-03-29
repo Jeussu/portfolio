@@ -96,10 +96,24 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.08), transparent 28%),
+      radial-gradient(circle at top right, hsl(var(--foreground) / 0.04), transparent 18%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
   }
 }

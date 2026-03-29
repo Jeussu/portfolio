@@ -22,10 +22,10 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+            <div className="container mx-auto flex h-[4.25rem] items-center justify-between px-4">
                 <Link href="/" className="mr-6 flex items-center space-x-2 font-bold text-xl">
-                    <span>Do The Vinh</span>
+                    <span className="tracking-tight">Do The Vinh</span>
                 </Link>
                 <div className="hidden md:flex flex-1 items-center justify-end space-x-6">
                     <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -34,8 +34,10 @@ export function Navbar() {
                                 key={item.href}
                                 href={item.href}
                                 className={cn(
-                                    "transition-colors hover:text-foreground/80",
-                                    pathname === item.href ? "text-foreground" : "text-foreground/60"
+                                    "relative py-1 transition-colors hover:text-foreground/80",
+                                    pathname === item.href
+                                        ? "text-foreground after:absolute after:left-0 after:right-0 after:-bottom-[0.85rem] after:h-px after:bg-primary"
+                                        : "text-foreground/60"
                                 )}
                             >
                                 {item.name}
@@ -62,17 +64,17 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-b border-border/40 bg-background"
+                        className="border-b border-border/40 bg-background md:hidden"
                     >
-                        <div className="container mx-auto py-4 px-4 flex flex-col space-y-4">
+                        <div className="container mx-auto flex flex-col space-y-2 px-4 py-4">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
                                     className={cn(
-                                        "text-sm font-medium transition-colors hover:text-foreground/80",
-                                        pathname === item.href ? "text-foreground" : "text-foreground/60"
+                                        "rounded-xl px-3 py-2 text-sm font-medium transition-colors hover:bg-accent/80 hover:text-foreground/80",
+                                        pathname === item.href ? "bg-accent/70 text-foreground" : "text-foreground/60"
                                     )}
                                 >
                                     {item.name}
