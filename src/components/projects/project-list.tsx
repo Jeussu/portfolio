@@ -56,7 +56,14 @@ export function ProjectList() {
                                     </a>
                                 </Button>
                             )}
-                            {!project.links.github && !project.links.live && (
+                            {project.links.more?.map((link) => (
+                                <Button key={link.href} variant="ghost" size="sm" asChild className="w-full border hover:border-input hover:bg-background">
+                                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                                        <Github className="mr-2 h-4 w-4" /> {link.label}
+                                    </a>
+                                </Button>
+                            ))}
+                            {!project.links.github && !project.links.live && !project.links.more?.length && (
                                 <p className="text-sm leading-relaxed text-muted-foreground">
                                     No public repo or demo is shared for this capstone. It is included to show current backend-growth direction only.
                                 </p>

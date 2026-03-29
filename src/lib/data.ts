@@ -94,6 +94,25 @@ export const PROJECTS = [
         featured: true,
     },
     {
+        slug: "portfolio-v1-to-v2",
+        title: "Portfolio Website (V1 -> V2)",
+        description:
+            "A self-directed portfolio rebuild that evolved from a static HTML/CSS/JavaScript site into a structured Next.js/TypeScript experience with clearer recruiter-facing messaging, stronger case-study presentation, and better positioning for .NET backend roles. The two public repositories document that progression from the earlier version to the current portfolio.",
+        tags: ["HTML5", "CSS3 / SCSS", "JavaScript", "Next.js", "TypeScript", "Responsive UI", "Content Architecture"],
+        links: {
+            live: "https://vinh-portfolio-self.vercel.app",
+            github: "https://github.com/Jeussu/portfolio",
+            more: [
+                {
+                    label: "V1 Repo",
+                    href: "https://github.com/Jeussu/portfolio-website",
+                },
+            ],
+        },
+        status: "Portfolio Engineering",
+        featured: false,
+    },
+    {
         slug: "mini-h2all",
         title: "Mini H2ALL (Capstone)",
         description:
@@ -234,6 +253,14 @@ export const BACKEND_DIRECTION = [
 ]
 
 export const CERTIFICATES = [
+    {
+        title: "Responsive Portfolio Website HTML5, CSS3, JavaScript (2024)",
+        issuer: "Udemy / Cheetah Academy",
+        date: "Dec 2025",
+        description:
+            "A 12-hour hands-on course focused on responsive portfolio implementation with HTML, CSS, and JavaScript. Included as supporting evidence for frontend presentation fundamentals and the evolution of the portfolio project.",
+        image: "/images/certificates/responsive-portfolio-udemy-2025.jpg",
+    },
     {
         title: "Complete guide to ASP.NET Core MVC (.NET 6)",
         issuer: "Udemy (Bhrugen Patel)",
