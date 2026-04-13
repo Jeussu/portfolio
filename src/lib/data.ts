@@ -81,18 +81,32 @@ export const SKILLS = {
 
 export const PROJECTS = [
     {
+        slug: "nzwalks-web-api",
+        title: "NZWalks Web API",
+        relevance:
+            "Latest public backend learning project showing the shift from MVC practice toward API-first ASP.NET Core work.",
+        description:
+            "Newer ASP.NET Core Web API learning project focused on controller-based endpoints, Swagger / OpenAPI setup, and early EF Core / SQLite groundwork.",
+        tags: ["ASP.NET Core Web API", ".NET 8", "Swagger / OpenAPI", "EF Core", "SQLite"],
+        links: {
+            github: "https://github.com/Jeussu/NZWalks",
+        },
+        status: "Latest Backend Project",
+        featured: true,
+    },
+    {
         slug: "bulkybook-v2",
         title: "BulkyBook (v2)",
         relevance:
-            "Public proof of ASP.NET Core MVC delivery across auth, admin workflows, and persistence-oriented backend thinking.",
+            "Earlier public ASP.NET Core MVC practice project that helped establish the web/backend foundation before moving deeper into APIs.",
         description:
-            "Public ASP.NET Core MVC project used to demonstrate backend-oriented delivery across auth, admin workflows, reporting, and Stripe-backed checkout flows.",
+            "Earlier supporting ASP.NET Core MVC project covering identity, admin workflows, reporting, and Stripe-backed checkout flows.",
         tags: ["ASP.NET Core MVC", "C#", "MySQL", "Identity", "Stripe", "Reporting"],
         links: {
             live: "https://mybulkybook.azurewebsites.net",
             github: "https://github.com/Jeussu/BulkyBook1",
         },
-        status: "Public Supporting Project",
+        status: "Earlier MVC Project",
         featured: true,
     },
     {
@@ -126,7 +140,7 @@ export const PROJECTS = [
         tags: [".NET Web API", "EF Core", "PostgreSQL", "RabbitMQ", "Docker", "Capstone"],
         links: {},
         status: "Capstone / Transition Work",
-        featured: true,
+        featured: false,
     },
 ]
 
@@ -260,12 +274,12 @@ export const BACKEND_DIRECTION = [
 
 export const CERTIFICATES = [
     {
-        title: "Responsive Portfolio Website HTML5, CSS3, JavaScript (2024)",
-        issuer: "Udemy / Cheetah Academy",
-        date: "Dec 2025",
+        title: "Build ASP.NET Core Web API - Scratch To Finish (.NET8 API)",
+        issuer: "Udemy (Sameer Saini)",
+        date: "Apr 2026",
         description:
-            "A 12-hour hands-on course focused on responsive portfolio implementation with HTML, CSS, and JavaScript. Included as supporting evidence for frontend presentation fundamentals and the evolution of the portfolio project.",
-        image: "/images/certificates/responsive-portfolio-udemy-2025.jpg",
+            "18-hour course focused on ASP.NET Core Web API fundamentals and backend API structure.",
+        image: "/images/certificates/aspnet-core-web-api-udemy-2026.jpg",
     },
     {
         title: "Complete guide to ASP.NET Core MVC (.NET 6)",
