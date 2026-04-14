@@ -82,16 +82,16 @@ export const SKILLS = {
 export const PROJECTS = [
     {
         slug: "nzwalks-web-api",
-        title: "NZWalks Web API",
+        title: "NZWalks",
         relevance:
-            "Latest public backend learning project showing the shift from MVC practice toward API-first ASP.NET Core work.",
+            "Shows progression beyond basic API scaffolding into CRUD APIs, JWT auth, EF Core with SQL Server, image upload, and API/UI integration in a small multi-project .NET solution.",
         description:
-            "Newer ASP.NET Core Web API learning project focused on controller-based endpoints, Swagger / OpenAPI setup, and early EF Core / SQLite groundwork.",
-        tags: ["ASP.NET Core Web API", ".NET 8", "Swagger / OpenAPI", "EF Core", "SQLite"],
+            "ASP.NET Core 8 solution with a Web API for regions, walks, authentication, and image upload, plus a server-rendered MVC UI that currently manages regions through the API.",
+        tags: ["ASP.NET Core 8", "Web API", "MVC UI", "EF Core", "SQL Server", "JWT"],
         links: {
             github: "https://github.com/Jeussu/NZWalks",
         },
-        status: "Latest Backend Project",
+        status: "Backend Practice Project",
         featured: true,
     },
     {
@@ -274,32 +274,36 @@ export const BACKEND_DIRECTION = [
 
 export const CERTIFICATES = [
     {
-        title: "Build ASP.NET Core Web API - Scratch To Finish (.NET8 API)",
-        issuer: "Udemy (Sameer Saini)",
+        category: "Supporting Course",
+        title: "Build ASP.NET Core Web API (.NET 8)",
+        issuer: "Udemy · Sameer Saini",
         date: "Apr 2026",
         description:
-            "18-hour course focused on ASP.NET Core Web API fundamentals and backend API structure.",
+            "18-hour course covering ASP.NET Core Web API fundamentals, routing, controllers, validation, and backend API structure.",
         image: "/images/certificates/aspnet-core-web-api-udemy-2026.jpg",
     },
     {
-        title: "Complete guide to ASP.NET Core MVC (.NET 6)",
-        issuer: "Udemy (Bhrugen Patel)",
+        category: "Supporting Course",
+        title: "Complete ASP.NET Core MVC (.NET 6)",
+        issuer: "Udemy · Bruggen Patel",
         date: "Oct 2022",
-        description: "Coursework focused on ASP.NET Core MVC, authentication, and deployment-oriented fundamentals.",
+        description: "Coursework covering ASP.NET Core MVC fundamentals, architecture, and deployment-oriented concepts.",
         image: "/images/certificates/aspnet-core-mvc-udemy.png",
     },
     {
-        title: "Bachelor of Science in Computing (Honours)",
+        category: "Education",
+        title: "BSc (Hons) Computing",
         issuer: "University of Greenwich",
         date: "Jul 2022",
-        description: "Undergraduate computing degree with a formal software and systems foundation.",
+        description: "Undergraduate computing degree covering software, systems, and core engineering foundations.",
         image: "/images/certificates/greenwich-bachelor.png",
     },
     {
-        title: "BTEC Level 5 Higher National Diploma",
+        category: "Education",
+        title: "BTEC Level 5 HND in Computing",
         issuer: "Pearson BTEC",
         date: "Feb 2021",
-        description: "Higher National Diploma in Computing.",
+        description: "Higher National Diploma in Computing with a practical foundation in software and IT systems.",
         image: "/images/certificates/pearson-btec-hnd.png",
     },
 ]

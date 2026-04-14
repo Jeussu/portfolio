@@ -101,7 +101,7 @@ export function ExperienceContent() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.32 + index * 0.08 }}
-                                className="group overflow-hidden rounded-[1.6rem] border border-border/70 bg-background/80 text-left shadow-[0_20px_50px_-36px_hsl(var(--foreground)/0.45)] transition-transform duration-200 hover:-translate-y-1"
+                                className="group flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-border/70 bg-background/80 text-left shadow-[0_20px_50px_-36px_hsl(var(--foreground)/0.45)] transition-transform duration-200 hover:-translate-y-1"
                             >
                                 <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-border/70 bg-gradient-to-br from-muted via-muted/70 to-primary/[0.06]">
                                     <motion.div layoutId={`image-${cert.title}`} className="relative h-full w-full">
@@ -113,22 +113,27 @@ export function ExperienceContent() {
                                         />
                                     </motion.div>
                                 </div>
-                                <div className="p-6">
-                                    <div className="mb-3 flex items-start justify-between gap-3">
+                                <div className="flex flex-1 flex-col p-6">
+                                    <div className="mb-4 flex min-h-14 items-start justify-between gap-3">
                                         <div>
                                             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                                                Supporting Credential
+                                                {cert.category}
                                             </p>
                                             <p className="mt-2 text-sm font-medium text-primary">{cert.issuer}</p>
                                         </div>
-                                        <span className="rounded-full border border-border/70 bg-muted/70 px-3 py-1 text-xs text-muted-foreground">
+                                        <span className="shrink-0 rounded-full border border-border/70 bg-muted/70 px-3 py-1 text-xs text-muted-foreground">
                                             {cert.date}
                                         </span>
                                     </div>
-                                    <motion.h3 layoutId={`title-${cert.title}`} className="text-lg font-semibold leading-tight">
+                                    <motion.h3
+                                        layoutId={`title-${cert.title}`}
+                                        className="min-h-14 line-clamp-2 text-lg font-semibold leading-tight"
+                                    >
                                         {cert.title}
                                     </motion.h3>
-                                    <p className="mt-3 text-sm leading-7 text-muted-foreground">{cert.description}</p>
+                                    <p className="mt-3 min-h-[5.25rem] line-clamp-3 text-sm leading-7 text-muted-foreground">
+                                        {cert.description}
+                                    </p>
                                 </div>
                             </motion.button>
                         ))}
@@ -173,7 +178,7 @@ export function ExperienceContent() {
                                 <div className="mb-4 flex items-start justify-between gap-4">
                                     <div>
                                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                                            Supporting Credential
+                                            {selectedCert.category}
                                         </p>
                                         <p className="mt-2 text-lg font-medium text-primary">{selectedCert.issuer}</p>
                                     </div>
