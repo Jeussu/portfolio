@@ -89,6 +89,7 @@ export const PROJECTS = [
             "ASP.NET Core 8 solution with a Web API for regions, walks, authentication, and image upload, plus a server-rendered MVC UI that currently manages regions through the API.",
         tags: ["ASP.NET Core 8", "Web API", "MVC UI", "EF Core", "SQL Server", "JWT"],
         links: {
+            live: "http://vinh-nzwalks-api.somee.com/swagger",
             github: "https://github.com/Jeussu/NZWalks",
         },
         status: "Backend Practice Project",
