@@ -104,7 +104,7 @@ export const PROJECTS = [
             "Earlier supporting ASP.NET Core MVC project covering identity, admin workflows, reporting, and Stripe-backed checkout flows.",
         tags: ["ASP.NET Core MVC", "C#", "MySQL", "Identity", "Stripe", "Reporting"],
         links: {
-            live: "https://mybulkybook.azurewebsites.net",
+            live: "http://vinh-bulkybook.somee.com/",
             github: "https://github.com/Jeussu/BulkyBook1",
         },
         status: "Earlier MVC Project",
