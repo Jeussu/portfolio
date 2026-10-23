@@ -81,8 +81,8 @@ export const SKILLS = {
 
 export const THUY_NGA_LINKS = {
     live: "https://thuyngawedding.vn/",
-    // Stays null until the public showcase repository actually exists; until then the UI shows an unpublished note instead of a link.
-    showcaseRepo: null as string | null,
+    // Public documentation-only showcase repository; null makes the UI show an unpublished note instead of a link.
+    showcaseRepo: "https://github.com/Jeussu/thuynga-wedding-showcase" as string | null,
     caseStudy: "/case-studies/thuy-nga-wedding",
 }
 
@@ -104,7 +104,7 @@ export const PROJECTS = [
                 : undefined,
         },
         linkNote: THUY_NGA_LINKS.showcaseRepo
-            ? undefined
+            ? "Production source code is private; the showcase repository is a documentation-only case study."
             : "Production source code is private. A public showcase repository is in preparation.",
         status: "Client Production Delivery",
         featured: true,

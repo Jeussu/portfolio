@@ -227,12 +227,17 @@ export default function ThuyNgaCaseStudy() {
                                 </a>
                             </Button>
                             {THUY_NGA_LINKS.showcaseRepo ? (
-                                <Button variant="outline" size="sm" asChild className="w-full sm:w-auto">
-                                    <a href={THUY_NGA_LINKS.showcaseRepo} target="_blank" rel="noopener noreferrer">
-                                        <GitBranch className="mr-2 h-4 w-4" /> Showcase Repository
-                                        <span className="sr-only"> (opens in a new tab)</span>
-                                    </a>
-                                </Button>
+                                <>
+                                    <Button variant="outline" size="sm" asChild className="w-full sm:w-auto">
+                                        <a href={THUY_NGA_LINKS.showcaseRepo} target="_blank" rel="noopener noreferrer">
+                                            <GitBranch className="mr-2 h-4 w-4" /> Showcase Repository
+                                            <span className="sr-only"> (opens in a new tab)</span>
+                                        </a>
+                                    </Button>
+                                    <p className="text-sm leading-relaxed text-muted-foreground">
+                                        Production source code is private; the showcase repository is a documentation-only case study.
+                                    </p>
+                                </>
                             ) : (
                                 <p className="text-sm leading-relaxed text-muted-foreground">
                                     Production source code is private. A public showcase repository is in preparation.
