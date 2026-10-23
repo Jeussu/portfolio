@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const sections = [
+const h2allSections = [
     { id: "overview", label: "Overview" },
     { id: "business-context", label: "Business Context" },
     { id: "platform", label: "What the Platform Is" },
@@ -16,8 +16,8 @@ const sections = [
     { id: "backend-fit", label: "Why This Matters for Backend Roles" },
 ]
 
-export function TOC() {
-    const [activeSection, setActiveSection] = React.useState("overview")
+export function TOC({ sections = h2allSections }: { sections?: { id: string; label: string }[] }) {
+    const [activeSection, setActiveSection] = React.useState(sections[0]?.id ?? "")
 
     React.useEffect(() => {
         const observer = new IntersectionObserver(
@@ -37,7 +37,7 @@ export function TOC() {
         })
 
         return () => observer.disconnect()
-    }, [])
+    }, [sections])
 
     return (
         <nav className="sticky top-24 hidden h-fit max-h-[calc(100vh-6rem)] w-64 overflow-y-auto p-4 pl-8 lg:block">
