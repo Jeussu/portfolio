@@ -40,8 +40,11 @@ export function TOC({ sections = h2allSections }: { sections?: { id: string; lab
     }, [sections])
 
     return (
-        <nav className="sticky top-24 hidden h-fit max-h-[calc(100vh-6rem)] w-64 overflow-y-auto p-4 pl-8 lg:block">
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Contents</h4>
+        <nav
+            aria-label="On this page"
+            className="sticky top-24 hidden h-fit max-h-[calc(100vh-6rem)] w-64 overflow-y-auto p-4 pl-8 lg:block"
+        >
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Contents</p>
             <ul className="space-y-3 text-sm">
                 {sections.map((section) => (
                     <li key={section.id}>

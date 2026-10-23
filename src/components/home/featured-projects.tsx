@@ -22,8 +22,9 @@ export function FeaturedProjects() {
                         </p>
                         <h2 className="text-3xl font-black tracking-tight md:text-4xl">Selected Backend Projects</h2>
                         <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-                            An end-to-end client production delivery, alongside a small public project set that supports backend
-                            delivery, APIs, persistence, and transition work. H2ALL / FastLink remains the enterprise case study.
+                            Thuý Nga Wedding & Event is an end-to-end client production delivery; the public projects support
+                            backend delivery, APIs, persistence, and transition work. H2ALL / FastLink remains the flagship
+                            enterprise case study.
                         </p>
                     </div>
                     <Link
@@ -44,7 +45,7 @@ export function FeaturedProjects() {
                             )}
                         >
                             <CardHeader>
-                                <div className="mb-2 flex items-start justify-between gap-3">
+                                <div className="mb-2 flex flex-wrap items-start justify-between gap-3">
                                     <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
                                     {project.status && (
                                         <Badge variant="outline" className="text-xs">

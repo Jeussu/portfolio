@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card"
 
 export const metadata: Metadata = {
     title: "Case Studies | Do The Vinh",
@@ -16,7 +16,7 @@ const caseStudies = [
     {
         href: "/case-studies/h2all-fastlink",
         title: "H2ALL / FastLink",
-        status: "Enterprise Case Study",
+        status: "Flagship Enterprise Case Study",
         description:
             "Assigned finance, import, reporting, and reconciliation work inside a large enterprise ERP/logistics platform built on WinForms clients and hybrid WCF / Web API services.",
         tags: [".NET / C#", "WinForms / WPF", "WCF + Web API", "SQL Server / MySQL"],
@@ -50,7 +50,9 @@ export default function CaseStudiesPage() {
                     >
                         <CardHeader className="pb-5">
                             <div className="mb-2 flex items-start justify-between gap-3">
-                                <CardTitle className="text-2xl transition-colors group-hover:text-primary">{study.title}</CardTitle>
+                                <h2 className="text-2xl font-semibold leading-tight tracking-tight transition-colors group-hover:text-primary">
+                                    {study.title}
+                                </h2>
                                 <Badge variant="outline" className="shrink-0 text-xs">
                                     {study.status}
                                 </Badge>

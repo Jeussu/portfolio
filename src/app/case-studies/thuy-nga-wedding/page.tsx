@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import {
     CalendarDays,
     Check,
@@ -57,7 +58,7 @@ const capabilities = [
         icon: <Globe className="h-5 w-5 text-primary" />,
         title: "Public Website & CMS",
         description:
-            "Services, completed projects with photo albums, guides, testimonials with recorded consent, contact, privacy policy, and SEO with structured data. Every section is managed from the CMS.",
+            "Services, completed projects with photo albums, guides, testimonials with recorded consent, contact, privacy policy, and SEO with structured data. Services, projects, guides, testimonials, and site content are managed from the CMS.",
     },
     {
         icon: <Inbox className="h-5 w-5 text-primary" />,
@@ -94,7 +95,7 @@ const capabilities = [
 const stack = [
     { title: "Backend", items: ["ASP.NET Core 10 Web API", "EF Core 10", "ASP.NET Core Identity + 2FA", "QuestPDF", "MailKit"] },
     { title: "Frontend", items: ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS"] },
-    { title: "Data & Services", items: ["SQL Server", "Cloudinary (media)", "Cloudflare Turnstile", "GA4 (after consent)"] },
+    { title: "Data & Services", items: ["SQL Server", "Cloudinary (media)", "Cloudflare Turnstile", "GA4 (consent-gated, off at launch)"] },
     { title: "Quality & Delivery", items: ["xUnit", "Node.js test runner", "Playwright", "GitHub Actions", "Docker Compose", "nginx"] },
 ]
 
@@ -137,11 +138,11 @@ const securityPractices = [
     "Antiforgery tokens, bot protection on public forms, and rate limiting",
     "Content-Security-Policy with a per-request nonce and a stricter admin policy",
     "Private images streamed only to signed-in administrators",
-    "Consent-gated analytics, click-to-load video, and a privacy policy",
+    "Consent-gated analytics (off at launch), click-to-load video, and a privacy policy",
 ]
 
 const reliabilityPractices = [
-    "Idempotent public submissions and optimistic concurrency on edits",
+    "Idempotent public submissions and version checks on quotations and payments",
     "CI check that database migrations match the model",
     "Pinned toolchain, locked restores, and NuGet / npm vulnerability audits",
     "Migration and backup/restore procedures rehearsed before go-live",
@@ -150,7 +151,7 @@ const reliabilityPractices = [
 ]
 
 const testInventory = [
-    { value: "265", label: "Backend test files", detail: "96 unit and 169 integration test files" },
+    { value: "265", label: "Backend test-project files", detail: "96 unit and 169 integration C# files, including shared test infrastructure" },
     { value: "~1,950", label: "xUnit test methods", detail: "Facts and theories; theories run several cases" },
     { value: "57", label: "Frontend unit-test files", detail: "Run with the Node.js test runner" },
     { value: "60", label: "Playwright specs", detail: "Desktop 1440 px and phone 375 / 360 px journeys" },
@@ -184,7 +185,7 @@ const lessons = [
     "An application that refuses to start without its required settings turns a configuration checklist into an automated gate.",
     "Concurrency, idempotency, and money rules are best proven against a real database rather than mocks.",
     "Privacy work needs lead time: consent, data-protection procedures, and the privacy policy had to be ready before launch.",
-    "AI-assisted development (Claude Code) worked because every milestone had written acceptance criteria, independent review, CI on exact commits, and human sign-off.",
+    "AI-assisted development worked because it was gated: Claude Code for implementation, a separate AI model for independent review, written acceptance criteria, CI on exact commits, and my own manual QA and sign-off at every milestone.",
 ]
 
 export default function ThuyNgaCaseStudy() {
@@ -216,7 +217,7 @@ export default function ThuyNgaCaseStudy() {
                             <Badge variant="outline">GitHub Actions</Badge>
                         </div>
                         <p className="mt-6 max-w-4xl text-sm leading-relaxed text-foreground/80">
-                            11 milestones delivered between September and October 2026, with public go-live on 22 October 2026.
+                            Milestones M0–M11 delivered between September and October 2026, with public go-live on 22 October 2026.
                         </p>
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                             <Button size="sm" asChild className="w-full sm:w-auto">
@@ -275,7 +276,7 @@ export default function ThuyNgaCaseStudy() {
                                     </CardHeader>
                                     <CardContent>
                                         <p className="text-sm leading-relaxed text-muted-foreground">
-                                            Eleven milestones, then staging, user acceptance testing, and business acceptance before the public go-live.
+                                            A foundation milestone and eleven delivery milestones, ending with security hardening, staging and user acceptance testing, business acceptance, and go-live.
                                         </p>
                                     </CardContent>
                                 </Card>
@@ -283,8 +284,11 @@ export default function ThuyNgaCaseStudy() {
                             <div className="rounded-lg border-l-4 border-primary bg-muted/50 p-6">
                                 <h3 className="mb-2 font-semibold">How this complements H2ALL / FastLink</h3>
                                 <p className="leading-relaxed text-muted-foreground">
-                                    H2ALL / FastLink shows assigned work inside a large enterprise platform. Thuý Nga shows full
-                                    ownership of a smaller system: scope, architecture, security, testing, deployment, and production delivery.
+                                    <Link href="/case-studies/h2all-fastlink" className="font-medium text-primary underline-offset-4 hover:underline">
+                                        H2ALL / FastLink
+                                    </Link>{" "}
+                                    shows assigned work inside a large enterprise platform. Thuý Nga shows full ownership of a
+                                    smaller system: scope, architecture, security, testing, deployment, and production delivery.
                                 </p>
                             </div>
                         </section>
@@ -368,7 +372,7 @@ export default function ThuyNgaCaseStudy() {
                                 <IconCard
                                     icon={<Workflow className="h-5 w-5 text-primary" />}
                                     title="Correct Workflows Under Concurrency"
-                                    description="Exactly-once lead conversion with a race-safe duplicate check, idempotent public submissions, and optimistic concurrency on edits."
+                                    description="Exactly-once lead conversion with a race-safe duplicate check, idempotent public submissions, and version checks on quotations and payments."
                                 />
                                 <IconCard
                                     icon={<ReceiptText className="h-5 w-5 text-primary" />}
@@ -435,7 +439,7 @@ export default function ThuyNgaCaseStudy() {
                                     items={reliabilityPractices}
                                 />
                             </div>
-                            <div className="mt-6 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-muted-foreground">
+                            <div className="mt-6 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-foreground/80">
                                 <strong>Scope of this section:</strong> it describes practices, not configuration. Thresholds,
                                 allow-lists, hostnames, and operational procedures are intentionally left out.
                             </div>
@@ -460,7 +464,7 @@ export default function ThuyNgaCaseStudy() {
                             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                                 Test inventory at the production release: counts of test files and test methods, not executions.
                             </p>
-                            <ol className="mt-8 grid gap-4 md:grid-cols-5">
+                            <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                                 {ciSteps.map((step, index) => (
                                     <li key={step} className="rounded-lg border bg-card p-4 text-center">
                                         <div className="mb-2 text-sm font-semibold text-primary">Step {index + 1}</div>
@@ -486,7 +490,7 @@ export default function ThuyNgaCaseStudy() {
                             </ol>
                             <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
                                 <h3 className="mb-3 font-semibold">Path to production</h3>
-                                <p className="leading-relaxed text-muted-foreground">
+                                <p className="leading-relaxed text-foreground/80">
                                     Security hardening, then a production-like staging environment with user acceptance testing,
                                     business acceptance by the client, and a protected preview of the production site. The public
                                     go-live followed on 22 October 2026, and a Next.js security update shipped to production the next day.
@@ -508,7 +512,7 @@ export default function ThuyNgaCaseStudy() {
                             </ul>
                         </section>
 
-                        <div className="mt-12 mb-12 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-muted-foreground">
+                        <div className="mt-12 mb-12 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-foreground/80">
                             <strong>Confidentiality:</strong> the production source code is private. This case study describes
                             product scope, architecture, and engineering practice without exposing source code, client data,
                             credentials, or infrastructure details. The business name, brand, and website belong to the client.

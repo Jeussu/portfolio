@@ -17,8 +17,8 @@ import {
 export function ThuyNgaArchitectureDiagram() {
     return (
         <figure className="my-10 rounded-xl border bg-muted/20 p-5 md:p-8">
-            <div className="flex flex-col items-stretch gap-4 lg:flex-row lg:items-center">
-                <div className="grid gap-3 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-5 shadow-sm sm:grid-cols-2 lg:w-48 lg:grid-cols-1">
+            <div className="flex flex-col items-stretch gap-4 xl:flex-row xl:items-center">
+                <div className="grid gap-3 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-5 shadow-sm sm:grid-cols-2 xl:w-48 xl:grid-cols-1">
                     <Node icon={<Users className="h-5 w-5 text-primary" />} title="Visitors" detail="Public website" />
                     <Node icon={<LayoutDashboard className="h-5 w-5 text-primary" />} title="Administrators" detail="CMS and CRM" />
                 </div>
@@ -61,15 +61,15 @@ export function ThuyNgaArchitectureDiagram() {
                 </div>
             </div>
 
-            <div className="my-4 lg:ml-auto lg:w-[calc(100%-16rem)]">
+            <div className="my-4 xl:ml-auto xl:w-[calc(100%-16rem)]">
                 <FlowArrow label="Integrations" vertical />
             </div>
 
-            <div className="grid gap-3 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-5 shadow-sm sm:grid-cols-2 lg:ml-auto lg:w-[calc(100%-16rem)] lg:grid-cols-4">
+            <div className="grid gap-3 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-5 shadow-sm sm:grid-cols-2 xl:ml-auto xl:w-[calc(100%-16rem)] xl:grid-cols-4">
                 <Node icon={<Cloud className="h-5 w-5 text-amber-500" />} title="Media CDN" detail="Public images and video" />
                 <Node icon={<Bot className="h-5 w-5 text-amber-500" />} title="Bot Protection" detail="Public forms" />
                 <Node icon={<Mail className="h-5 w-5 text-amber-500" />} title="SMTP Relay" detail="Notification e-mail" />
-                <Node icon={<ChartColumn className="h-5 w-5 text-amber-500" />} title="Analytics" detail="After consent only" />
+                <Node icon={<ChartColumn className="h-5 w-5 text-amber-500" />} title="Analytics" detail="Consent-gated, off at launch" />
             </div>
             <figcaption className="mt-6 text-center text-xs leading-relaxed text-muted-foreground">
                 Abstracted view. Hostnames, network layout, hosting provider, and operational details are intentionally omitted.
@@ -80,7 +80,7 @@ export function ThuyNgaArchitectureDiagram() {
 
 function Node({ icon, title, detail }: { icon: React.ReactNode; title: string; detail: string }) {
     return (
-        <div className="flex items-center gap-3 lg:flex-col lg:text-center">
+        <div className="flex items-center gap-3 xl:flex-col xl:text-center">
             {icon}
             <div>
                 <div className="text-sm font-bold">{title}</div>
@@ -106,8 +106,8 @@ function FlowArrow({ label, vertical = false }: { label: string; vertical?: bool
     return (
         <div className="flex flex-col items-center gap-1" aria-hidden="true">
             <span className="font-mono text-xs text-muted-foreground">{label}</span>
-            <ArrowDown className={vertical ? "h-6 w-6 text-muted-foreground" : "h-6 w-6 text-muted-foreground lg:hidden"} />
-            {!vertical && <ArrowRight className="hidden h-6 w-6 text-muted-foreground lg:block" />}
+            <ArrowDown className={vertical ? "h-6 w-6 text-muted-foreground" : "h-6 w-6 text-muted-foreground xl:hidden"} />
+            {!vertical && <ArrowRight className="hidden h-6 w-6 text-muted-foreground xl:block" />}
         </div>
     )
 }
