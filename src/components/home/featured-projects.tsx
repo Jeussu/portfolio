@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Github, Link as LinkIcon } from "lucide-react"
+import { ArrowRight, BookOpen, Github, Link as LinkIcon } from "lucide-react"
 
 import { PROJECTS } from "@/lib/data"
+import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -17,12 +18,13 @@ export function FeaturedProjects() {
                 <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div className="max-w-3xl">
                         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                            Supporting Public Work
+                            Production Delivery & Public Work
                         </p>
-                        <h2 className="text-3xl font-black tracking-tight md:text-4xl">Supporting Backend Projects</h2>
+                        <h2 className="text-3xl font-black tracking-tight md:text-4xl">Selected Backend Projects</h2>
                         <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-                            A small public project set that supports backend delivery, APIs, persistence, and transition work.
-                            The flagship production proof remains the H2ALL / FastLink case study.
+                            Thuý Nga Wedding & Event is an end-to-end client production delivery; the public projects support
+                            backend delivery, APIs, persistence, and transition work. H2ALL / FastLink remains the flagship
+                            enterprise case study.
                         </p>
                     </div>
                     <Link
@@ -37,10 +39,13 @@ export function FeaturedProjects() {
                     {featured.map((project) => (
                         <Card
                             key={project.slug}
-                            className="flex h-full flex-col overflow-hidden border-border/70 bg-gradient-to-br from-card via-card to-primary/[0.04] transition-transform duration-200 hover:-translate-y-1"
+                            className={cn(
+                                "flex h-full flex-col overflow-hidden border-border/70 bg-gradient-to-br from-card via-card to-primary/[0.04] transition-transform duration-200 hover:-translate-y-1",
+                                project.spotlight && "md:col-span-2"
+                            )}
                         >
                             <CardHeader>
-                                <div className="mb-2 flex items-start justify-between gap-3">
+                                <div className="mb-2 flex flex-wrap items-start justify-between gap-3">
                                     <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
                                     {project.status && (
                                         <Badge variant="outline" className="text-xs">
@@ -72,8 +77,15 @@ export function FeaturedProjects() {
                                 {project.links.live && (
                                     <Button size="sm" asChild className="w-full sm:w-auto">
                                         <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-                                            <LinkIcon className="mr-2 h-4 w-4" /> Demo
+                                            <LinkIcon className="mr-2 h-4 w-4" /> {project.links.liveLabel ?? "Demo"}
                                         </a>
+                                    </Button>
+                                )}
+                                {project.links.caseStudy && (
+                                    <Button variant="outline" size="sm" asChild className="w-full sm:w-auto">
+                                        <Link href={project.links.caseStudy}>
+                                            <BookOpen className="mr-2 h-4 w-4" /> Case Study
+                                        </Link>
                                     </Button>
                                 )}
                                 {project.links.github && (
@@ -90,6 +102,9 @@ export function FeaturedProjects() {
                                         </a>
                                     </Button>
                                 ))}
+                                {project.linkNote && (
+                                    <p className="basis-full text-sm leading-relaxed text-muted-foreground">{project.linkNote}</p>
+                                )}
                                 {!project.links.github && !project.links.live && !project.links.more?.length && (
                                     <p className="text-sm leading-relaxed text-muted-foreground">
                                         No public repo or demo is shared for this capstone. It is included to show current backend-growth direction only.

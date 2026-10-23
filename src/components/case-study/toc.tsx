@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const sections = [
+const h2allSections = [
     { id: "overview", label: "Overview" },
     { id: "business-context", label: "Business Context" },
     { id: "platform", label: "What the Platform Is" },
@@ -16,8 +16,8 @@ const sections = [
     { id: "backend-fit", label: "Why This Matters for Backend Roles" },
 ]
 
-export function TOC() {
-    const [activeSection, setActiveSection] = React.useState("overview")
+export function TOC({ sections = h2allSections }: { sections?: { id: string; label: string }[] }) {
+    const [activeSection, setActiveSection] = React.useState(sections[0]?.id ?? "")
 
     React.useEffect(() => {
         const observer = new IntersectionObserver(
@@ -37,11 +37,14 @@ export function TOC() {
         })
 
         return () => observer.disconnect()
-    }, [])
+    }, [sections])
 
     return (
-        <nav className="sticky top-24 hidden h-fit max-h-[calc(100vh-6rem)] w-64 overflow-y-auto p-4 pl-8 lg:block">
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Contents</h4>
+        <nav
+            aria-label="On this page"
+            className="sticky top-24 hidden h-fit max-h-[calc(100vh-6rem)] w-64 overflow-y-auto p-4 pl-8 lg:block"
+        >
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Contents</p>
             <ul className="space-y-3 text-sm">
                 {sections.map((section) => (
                     <li key={section.id}>

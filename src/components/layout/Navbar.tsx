@@ -10,7 +10,7 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 const navItems = [
     { name: "Home", href: "/" },
-    { name: "Case Study", href: "/case-studies/h2all-fastlink" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Projects", href: "/projects" },
     { name: "Experience", href: "/experience" },
     { name: "Backend Growth", href: "/upskill" },
@@ -20,6 +20,10 @@ const navItems = [
 export function Navbar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const isActive = (href: string) =>
+        pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+    const ariaCurrent = (href: string) =>
+        pathname === href ? "page" : isActive(href) ? "true" : undefined;
 
     return (
         <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
@@ -33,9 +37,10 @@ export function Navbar() {
                             <Link
                                 key={item.href}
                                 href={item.href}
+                                aria-current={ariaCurrent(item.href)}
                                 className={cn(
                                     "relative py-1 transition-colors hover:text-foreground/80",
-                                    pathname === item.href
+                                    isActive(item.href)
                                         ? "text-foreground after:absolute after:left-0 after:right-0 after:-bottom-[0.85rem] after:h-px after:bg-primary"
                                         : "text-foreground/60"
                                 )}
@@ -72,9 +77,10 @@ export function Navbar() {
                                     key={item.href}
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
+                                    aria-current={ariaCurrent(item.href)}
                                     className={cn(
                                         "rounded-xl px-3 py-2 text-sm font-medium transition-colors hover:bg-accent/80 hover:text-foreground/80",
-                                        pathname === item.href ? "bg-accent/70 text-foreground" : "text-foreground/60"
+                                        isActive(item.href) ? "bg-accent/70 text-foreground" : "text-foreground/60"
                                     )}
                                 >
                                     {item.name}
