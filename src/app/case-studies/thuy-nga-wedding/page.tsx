@@ -185,7 +185,7 @@ const lessons = [
     "An application that refuses to start without its required settings turns a configuration checklist into an automated gate.",
     "Concurrency, idempotency, and money rules are best proven against a real database rather than mocks.",
     "Privacy work needs lead time: consent, data-protection procedures, and the privacy policy had to be ready before launch.",
-    "AI-assisted development worked because it was gated: Claude Code for implementation, a separate AI model for independent review, written acceptance criteria, CI on exact commits, and my own manual QA and sign-off at every milestone.",
+    "Development was supported by Claude Code, with independent AI-assisted technical reviews. Project decisions, manual QA, release approvals, and final acceptance remained under human ownership.",
 ]
 
 export default function ThuyNgaCaseStudy() {
