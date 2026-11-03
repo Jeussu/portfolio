@@ -35,7 +35,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.5,
         },
         {
+            url: `${baseUrl}/case-studies`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/case-studies/h2all-fastlink`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/case-studies/thuy-nga-wedding`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.9,

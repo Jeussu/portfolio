@@ -79,7 +79,37 @@ export const SKILLS = {
     ],
 }
 
+export const THUY_NGA_LINKS = {
+    live: "https://thuyngawedding.vn/",
+    // Public documentation-only showcase repository; null makes the UI show an unpublished note instead of a link.
+    showcaseRepo: "https://github.com/Jeussu/thuynga-wedding-showcase" as string | null,
+    caseStudy: "/case-studies/thuy-nga-wedding",
+}
+
 export const PROJECTS = [
+    {
+        slug: "thuy-nga-wedding",
+        title: "Thuý Nga Wedding & Event",
+        relevance:
+            "Sole engineer from requirements to go-live: architecture, security, testing, and deployment on ASP.NET Core 10 and Next.js 16, with 2FA, idempotent workflows, real-database integration tests, and Playwright E2E in CI.",
+        description:
+            "Production platform for a Hanoi wedding and event decoration business: a public Vietnamese website plus an internal CMS and CRM covering leads, customers, events, appointments, quotations with PDF output, and payment tracking.",
+        tags: ["ASP.NET Core 10", "EF Core", "SQL Server", "Next.js 16", "TypeScript", "2FA", "xUnit", "Playwright", "GitHub Actions"],
+        links: {
+            live: THUY_NGA_LINKS.live,
+            liveLabel: "Live Site",
+            caseStudy: THUY_NGA_LINKS.caseStudy,
+            more: THUY_NGA_LINKS.showcaseRepo
+                ? [{ label: "Showcase Repo", href: THUY_NGA_LINKS.showcaseRepo }]
+                : undefined,
+        },
+        linkNote: THUY_NGA_LINKS.showcaseRepo
+            ? "Production source code is private; the showcase repository is a documentation-only case study."
+            : "Production source code is private. A public showcase repository is in preparation.",
+        status: "Client Production Delivery",
+        featured: true,
+        spotlight: true,
+    },
     {
         slug: "nzwalks-web-api",
         title: "NZWalks",

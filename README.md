@@ -43,9 +43,11 @@ npm start
 ## Project Structure
 
 - `src/app` - App Router pages, layout, metadata, sitemap, robots, and global styles
-- `src/app/case-studies/h2all-fastlink/page.tsx` - flagship case study route
+- `src/app/case-studies/page.tsx` - case studies index
+- `src/app/case-studies/h2all-fastlink/page.tsx` - flagship enterprise case study route
+- `src/app/case-studies/thuy-nga-wedding/page.tsx` - end-to-end client production delivery case study route
 - `src/components/home` - home page sections
-- `src/components/case-study` - case study UI pieces such as the architecture diagram and table of contents
+- `src/components/case-study` - case study UI pieces such as the architecture diagrams and table of contents
 - `src/components/layout` - navbar and footer
 - `src/components/projects` - project listing UI
 - `src/components/upskill` - backend-growth page content
@@ -56,6 +58,7 @@ npm start
 
 - Start with `src/lib/data.ts` for profile details, metrics, skills, projects, experience, certificates, and backend-growth content.
 - Update `src/app/case-studies/h2all-fastlink/page.tsx` for the main H2ALL / FastLink narrative and section-level copy.
+- Update `src/app/case-studies/thuy-nga-wedding/page.tsx` for the Thuý Nga narrative, and set `THUY_NGA_LINKS.showcaseRepo` in `src/lib/data.ts` only once the public showcase repository exists.
 - Update `src/components/home` if the home page emphasis or supporting summaries need to change.
 - Update `src/app/layout.tsx` for site-wide metadata, and `src/components/layout` for navigation or footer copy.
 
