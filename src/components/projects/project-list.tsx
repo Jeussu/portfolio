@@ -1,8 +1,10 @@
 "use client"
 
-import { Github, Link as LinkIcon } from "lucide-react"
+import Link from "next/link"
+import { BookOpen, Github, Link as LinkIcon } from "lucide-react"
 
 import { PROJECTS } from "@/lib/data"
+import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -14,7 +16,10 @@ export function ProjectList() {
                 {PROJECTS.map((project) => (
                     <Card
                         key={project.slug}
-                        className="group flex h-full flex-col overflow-hidden border-border/70 bg-gradient-to-br from-card via-card to-primary/[0.04] transition-all duration-200 hover:-translate-y-1"
+                        className={cn(
+                            "group flex h-full flex-col overflow-hidden border-border/70 bg-gradient-to-br from-card via-card to-primary/[0.04] transition-all duration-200 hover:-translate-y-1",
+                            project.spotlight && "md:col-span-2"
+                        )}
                     >
                         <CardHeader className="pb-5">
                             <div className="mb-2 flex items-start justify-between gap-3">
@@ -56,8 +61,15 @@ export function ProjectList() {
                             {project.links.live && (
                                 <Button size="sm" asChild className="w-full sm:w-auto">
                                     <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-                                        <LinkIcon className="mr-2 h-4 w-4" /> Live
+                                        <LinkIcon className="mr-2 h-4 w-4" /> {project.links.liveLabel ?? "Live"}
                                     </a>
+                                </Button>
+                            )}
+                            {project.links.caseStudy && (
+                                <Button variant="outline" size="sm" asChild className="w-full sm:w-auto">
+                                    <Link href={project.links.caseStudy}>
+                                        <BookOpen className="mr-2 h-4 w-4" /> Case Study
+                                    </Link>
                                 </Button>
                             )}
                             {project.links.github && (
@@ -74,6 +86,9 @@ export function ProjectList() {
                                     </a>
                                 </Button>
                             ))}
+                            {project.linkNote && (
+                                <p className="basis-full text-sm leading-relaxed text-muted-foreground">{project.linkNote}</p>
+                            )}
                             {!project.links.github && !project.links.live && !project.links.more?.length && (
                                 <p className="text-sm leading-relaxed text-muted-foreground">
                                     No public repo or demo is shared for this capstone. It is included to show current backend-growth direction only.
