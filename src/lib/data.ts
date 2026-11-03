@@ -91,7 +91,7 @@ export const PROJECTS = [
         slug: "thuy-nga-wedding",
         title: "Thuý Nga Wedding & Event",
         relevance:
-            "End-to-end client production delivery: requirements, architecture, security, testing, deployment, and go-live on ASP.NET Core 10 and Next.js 16, with 2FA, idempotent workflows, real-database integration tests, and Playwright E2E in CI.",
+            "Sole engineer from requirements to go-live: architecture, security, testing, and deployment on ASP.NET Core 10 and Next.js 16, with 2FA, idempotent workflows, real-database integration tests, and Playwright E2E in CI.",
         description:
             "Production platform for a Hanoi wedding and event decoration business: a public Vietnamese website plus an internal CMS and CRM covering leads, customers, events, appointments, quotations with PDF output, and payment tracking.",
         tags: ["ASP.NET Core 10", "EF Core", "SQL Server", "Next.js 16", "TypeScript", "2FA", "xUnit", "Playwright", "GitHub Actions"],

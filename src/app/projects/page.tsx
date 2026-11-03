@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 import { ProjectList } from "@/components/projects/project-list"
 
@@ -18,8 +19,14 @@ export default function ProjectsPage() {
                 <h1 className="text-4xl font-black tracking-tight md:text-5xl">Selected Projects</h1>
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
                     Led by Thuý Nga Wedding & Event, an end-to-end client production delivery, followed by a curated public
-                    project set that supports backend delivery, portfolio engineering, and transition work. The H2ALL /
-                    FastLink case study remains the primary enterprise proof point.
+                    project set that supports backend delivery, portfolio engineering, and transition work. The{" "}
+                    <Link
+                        href="/case-studies/h2all-fastlink"
+                        className="font-medium text-primary underline-offset-4 hover:underline"
+                    >
+                        H2ALL / FastLink case study
+                    </Link>{" "}
+                    remains the primary enterprise proof point.
                 </p>
             </div>
             <ProjectList />
