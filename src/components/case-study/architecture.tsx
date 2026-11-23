@@ -1,12 +1,10 @@
-"use client"
-
 import { ArrowRight, Database, Monitor, Network, Shield } from "lucide-react"
 
 export function ArchitectureDiagram() {
     return (
-        <div className="my-10 overflow-x-auto rounded-xl border bg-muted/20 p-8">
-            <div className="relative flex min-w-[820px] items-center justify-between gap-4">
-                <div className="flex w-48 flex-col items-center gap-4 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-6 shadow-sm">
+        <div className="my-10 overflow-x-auto rounded-xl border bg-muted/20 p-5 md:p-8">
+            <div className="relative flex flex-col items-stretch gap-4 xl:min-w-[820px] xl:flex-row xl:items-center xl:justify-between">
+                <div className="flex w-full flex-col items-center gap-4 xl:w-48 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-6 shadow-sm">
                     <Monitor className="h-10 w-10 text-primary" />
                     <div className="text-center">
                         <div className="text-sm font-bold">Client Tier</div>
@@ -17,7 +15,7 @@ export function ArchitectureDiagram() {
 
                 <div className="flex flex-col items-center gap-1">
                     <span className="font-mono text-xs text-muted-foreground">Request Flow</span>
-                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <ArrowRight className="h-6 w-6 rotate-90 text-muted-foreground xl:rotate-0" />
                 </div>
 
                 <div className="flex-1 rounded-xl border-2 border-primary/20 bg-primary/5 p-6">
@@ -44,10 +42,10 @@ export function ArchitectureDiagram() {
 
                 <div className="flex flex-col items-center gap-1">
                     <span className="font-mono text-xs text-muted-foreground">Data Access</span>
-                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <ArrowRight className="h-6 w-6 rotate-90 text-muted-foreground xl:rotate-0" />
                 </div>
 
-                <div className="flex w-48 flex-col items-center gap-4 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-6 shadow-sm">
+                <div className="flex w-full flex-col items-center gap-4 xl:w-48 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-card p-6 shadow-sm">
                     <Database className="h-10 w-10 text-amber-500" />
                     <div className="text-center">
                         <div className="text-sm font-bold">Data Tier</div>

@@ -5,12 +5,14 @@ import { ArchitectureDiagram } from "@/components/case-study/architecture"
 import { TOC } from "@/components/case-study/toc"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { pageMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-    title: "H2ALL / FastLink Case Study | Do The Vinh",
+export const metadata: Metadata = pageMetadata({
+    title: "H2ALL / FastLink Case Study",
     description:
         "Flagship case study covering enterprise ERP/logistics work in finance-related reporting, reconciliation, hybrid service flows, and backend-oriented .NET problem solving.",
-}
+    path: "/case-studies/h2all-fastlink",
+})
 
 const platformAreas = [
     "Checkpoint",
@@ -49,7 +51,7 @@ export default function H2AllCaseStudy() {
                     <TOC />
                 </aside>
 
-                <main className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1">
                     <div className="mb-12">
                         <Badge className="mb-4" variant="secondary">
                             Flagship Case Study
@@ -301,7 +303,7 @@ export default function H2AllCaseStudy() {
                                 </Card>
                             </div>
 
-                            <div className="mt-6 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-muted-foreground">
+                            <div className="mt-6 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-foreground/80">
                                 <strong>Why this matters:</strong> the work was not only about speed. It was equally about
                                 business correctness, safe reconciliation, and maintaining trust in finance/report outputs.
                             </div>
@@ -321,12 +323,12 @@ export default function H2AllCaseStudy() {
                             </ul>
                         </section>
 
-                        <div className="mt-12 mb-12 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-muted-foreground">
+                        <div className="mt-12 mb-12 rounded-lg border-l-4 border-amber-500 bg-muted p-6 text-sm text-foreground/80">
                             <strong>NDA Disclaimer:</strong> This case study describes system context, architecture direction,
                             assigned work areas, and safe public outcomes without exposing proprietary source code or sensitive business data.
                         </div>
                     </div>
-                </main>
+                </div>
             </div>
         </div>
     )
