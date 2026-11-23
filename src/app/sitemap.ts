@@ -1,56 +1,15 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://vinh-portfolio-self.vercel.app";
+import { SITE_URL } from "@/lib/data";
 
+export default function sitemap(): MetadataRoute.Sitemap {
     return [
-        {
-            url: `${baseUrl}`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/projects`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/experience`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/upskill`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: "yearly",
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/case-studies`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/case-studies/h2all-fastlink`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/case-studies/thuy-nga-wedding`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
+        { url: SITE_URL, changeFrequency: "monthly", priority: 1 },
+        { url: `${SITE_URL}/projects`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/experience`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.5 },
+        { url: `${SITE_URL}/case-studies`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/case-studies/h2all-fastlink`, changeFrequency: "monthly", priority: 0.9 },
+        { url: `${SITE_URL}/case-studies/thuy-nga-wedding`, changeFrequency: "monthly", priority: 0.9 },
     ];
 }

@@ -25,12 +25,14 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { THUY_NGA_LINKS } from "@/lib/data"
+import { pageMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-    title: "Thuý Nga Wedding & Event Case Study | Do The Vinh",
+export const metadata: Metadata = pageMetadata({
+    title: "Thuý Nga Wedding & Event Case Study",
     description:
         "End-to-end client production delivery: an ASP.NET Core 10 and Next.js 16 platform with CMS, CRM, appointments, quotations with PDF, payment tracking, two-factor authentication, and CI-tested delivery to go-live.",
-}
+    path: "/case-studies/thuy-nga-wedding",
+})
 
 const sections = [
     { id: "overview", label: "Overview" },
