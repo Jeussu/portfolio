@@ -1,6 +1,6 @@
 # Do The Vinh Portfolio
 
-Case-study-led portfolio for Do The Vinh, a .NET Backend Developer focused on ERP and logistics systems, reporting, reconciliation, and backend growth built on enterprise production experience. The site is centered on the H2ALL / FastLink case study, with supporting project, experience, and contact pages around it.
+Case-study-led portfolio for Do The Vinh, a Fullstack .NET Developer (Backend-focused) working with ASP.NET Core, SQL Server, and ReactJS. The site is centered on two case studies, H2ALL / FastLink (enterprise ERP/logistics) and Thuý Nga Wedding & Event (end-to-end production full-stack delivery), with supporting project, experience, and contact pages around them.
 
 ## Live Demo
 
@@ -8,14 +8,14 @@ Case-study-led portfolio for Do The Vinh, a .NET Backend Developer focused on ER
 
 ## Highlights
 
-- Built to position a backend-oriented .NET profile, not as a general design showcase.
-- Features a flagship H2ALL / FastLink case study for enterprise ERP and logistics work.
-- Includes supporting pages for projects, experience, backend-growth direction, and contact.
+- Built to position a backend-focused full-stack .NET profile, not as a general design showcase.
+- Features two flagship case studies: H2ALL / FastLink and Thuý Nga Wedding & Event.
+- Includes supporting pages for projects, experience, case studies, and contact.
 - Keeps most shared profile content centralized while leaving longer narrative sections close to their routes.
 
 ## Tech Stack
 
-- Next.js 16.1.1 with the App Router
+- Next.js 16.4.6 with the App Router
 - React 19.2.3
 - TypeScript 5.9.3
 - Tailwind CSS 4
@@ -24,7 +24,7 @@ Case-study-led portfolio for Do The Vinh, a .NET Backend Developer focused on ER
 
 ## Getting Started
 
-Node `20.10.0` is configured in `.nvmrc` and `.node-version`.
+Node `24` is configured in `.nvmrc` and `.node-version`.
 
 ```bash
 npm install
@@ -50,13 +50,12 @@ npm start
 - `src/components/case-study` - case study UI pieces such as the architecture diagrams and table of contents
 - `src/components/layout` - navbar and footer
 - `src/components/projects` - project listing UI
-- `src/components/upskill` - backend-growth page content
-- `src/lib/data.ts` - shared profile, metrics, skills, projects, experience, certificates, and backend-growth data
+- `src/lib/data.ts` - shared profile, metrics, skills, projects, experience, and certificates
 - `public/images` - avatar and certificate assets
 
 ## Updating Content
 
-- Start with `src/lib/data.ts` for profile details, metrics, skills, projects, experience, certificates, and backend-growth content.
+- Start with `src/lib/data.ts` for profile details, metrics, skills, projects, experience, and certificates.
 - Update `src/app/case-studies/h2all-fastlink/page.tsx` for the main H2ALL / FastLink narrative and section-level copy.
 - Update `src/app/case-studies/thuy-nga-wedding/page.tsx` for the Thuý Nga narrative, and set `THUY_NGA_LINKS.showcaseRepo` in `src/lib/data.ts` only once the public showcase repository exists.
 - Update `src/components/home` if the home page emphasis or supporting summaries need to change.

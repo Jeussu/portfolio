@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { ArrowRight, BookOpen, Github, Link as LinkIcon } from "lucide-react"
 
@@ -107,7 +105,7 @@ export function FeaturedProjects() {
                                 )}
                                 {!project.links.github && !project.links.live && !project.links.more?.length && (
                                     <p className="text-sm leading-relaxed text-muted-foreground">
-                                        No public repo or demo is shared for this capstone. It is included to show current backend-growth direction only.
+                                        No public repo or demo is shared for this capstone.
                                     </p>
                                 )}
                             </CardFooter>

@@ -1,17 +1,21 @@
 export const PROFILE = {
     name: "Do The Vinh",
-    title: ".NET Backend Developer",
-    headline: ".NET Backend Developer | ERP & Logistics Systems",
-    supporting: "3+ years in enterprise ERP/logistics systems with strong SQL, reporting, and business-rule depth.",
+    title: "Fullstack .NET Developer (Backend-focused)",
+    stack: "ASP.NET Core, SQL Server, ReactJS",
+    headline: "Fullstack .NET Developer (Backend-focused) | ASP.NET Core, SQL Server, ReactJS",
+    supporting:
+        "Backend-focused full-stack .NET developer with 3+ years of experience building ERP and logistics systems across finance, reporting, reconciliation, and workflow-heavy operations.",
     location: "Hanoi, Vietnam",
     summary:
-        "Production experience across WinForms/WPF clients, hybrid WCF/Web API flows, finance/import workflows, and data reconciliation. Intentionally moving deeper into ASP.NET Core Web API and backend service roles on top of that enterprise foundation.",
+        "Strong in C#, ASP.NET Core, EF Core, SQL Server/MySQL, OOP/design patterns, and service integration (REST, WCF/SOAP); improved heavy reporting runtime by about 40% and reduced DB cost by about 30%. Delivered a paid production full-stack platform end to end as sole engineer (ASP.NET Core 10 + Next.js/React), using AI coding agents under spec-first, CI-gated review.",
     cvLink: "https://drive.google.com/file/d/10wdQDhaehoLF9H0JlTtEFaPUCnCRPFhZ/view?usp=sharing",
     email: "vinhdt1406@gmail.com",
     phone: "+84 964 063 455",
     linkedin: "https://www.linkedin.com/in/vinhdt10",
     github: "https://github.com/Jeussu",
 }
+
+export const SITE_URL = "https://vinh-portfolio-self.vercel.app"
 
 export const METRICS = [
     {
@@ -38,36 +42,51 @@ export const METRICS = [
 
 export const SKILLS = {
     backend: [
-        "C# / .NET",
+        "C#",
         "ASP.NET Core Web API",
-        "REST APIs",
-        "WCF / Hybrid Service Integration",
-        "DTO / Request-Response Patterns",
-        "Dependency Injection",
-        "Validation / Logging / Exception Handling",
+        "EF Core",
+        "LINQ",
+        "OOP/SOLID",
+        "Design Patterns",
+        "DI",
+        "Middleware",
+        "Logging",
     ],
     data: [
         "SQL Server",
         "MySQL",
-        "Reporting & Data Reconciliation",
-        "Query Review & Performance Tuning",
-        "Transaction-Heavy Business Logic",
-        "PostgreSQL (Current Focus)",
-        "EF Core (Current Focus)",
+        "PostgreSQL",
+        "Indexing",
+        "Execution Plans",
+        "Transactions",
+        "Stored Procedures",
     ],
+    frontend: ["ReactJS", "Next.js (App Router)", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
     integration: [
-        "Hybrid WCF + Web API Environments",
-        "RabbitMQ / MassTransit (Learning Direction)",
-        "Docker / Docker Compose (Current Focus)",
-        "GitHub Actions (Current Focus)",
-        "xUnit / Moq (Current Focus)",
+        "REST",
+        "WCF/SOAP",
+        "RabbitMQ",
+        "MassTransit (basic)",
+        "Docker Compose",
+        "nginx",
+        "GitHub Actions (CI)",
     ],
+    testing: [
+        "xUnit",
+        "Moq",
+        "Playwright",
+        "Git/GitHub",
+        "TFS (basic)",
+        "Postman/Swagger",
+        "Profiling",
+        "Debugging",
+    ],
+    ai: ["Claude Code", "Codex", "Spec-first Tasks", "PR Review", "CI-gated Merges"],
     desktop: [
-        "WinForms",
+        "WinForms (.NET Framework 4.8)",
         "WPF",
-        "DevExpress",
-        "Enterprise UI to BL/DL/DB Tracing",
-        "Workflow-Heavy Production Clients",
+        "DevExpress UI/Reporting",
+        "ClickOnce Deployment",
     ],
     domain: [
         "ERP / Logistics Systems",
@@ -85,6 +104,8 @@ export const THUY_NGA_LINKS = {
     showcaseRepo: "https://github.com/Jeussu/thuynga-wedding-showcase" as string | null,
     caseStudy: "/case-studies/thuy-nga-wedding",
 }
+
+const SOMEE_NOTE = "Free hosting, HTTP only — may take ~10 s to load."
 
 export const PROJECTS = [
     {
@@ -122,6 +143,7 @@ export const PROJECTS = [
             live: "http://vinh-nzwalks-api.somee.com/swagger",
             github: "https://github.com/Jeussu/NZWalks",
         },
+        linkNote: SOMEE_NOTE,
         status: "Backend Practice Project",
         featured: true,
     },
@@ -137,6 +159,7 @@ export const PROJECTS = [
             live: "http://vinh-bulkybook.somee.com/",
             github: "https://github.com/Jeussu/BulkyBook1",
         },
+        linkNote: SOMEE_NOTE,
         status: "Earlier MVC Project",
         featured: true,
     },
@@ -144,10 +167,10 @@ export const PROJECTS = [
         slug: "portfolio-v1-to-v2",
         title: "Portfolio Website (V1 -> V2)",
         relevance:
-            "Shows portfolio engineering, content hierarchy, and recruiter-facing UI refinement in support of the backend-first profile.",
+            "Shows portfolio engineering, content hierarchy, and recruiter-facing UI refinement in support of a backend-focused full-stack .NET profile.",
         description:
-            "A self-directed portfolio rebuild that evolved from a static HTML/CSS/JavaScript site into a structured Next.js/TypeScript experience with clearer recruiter-facing messaging, stronger case-study presentation, and better positioning for .NET backend roles. The two public repositories document that progression from the earlier version to the current portfolio.",
-        tags: ["HTML5", "CSS3 / SCSS", "JavaScript", "Next.js", "TypeScript", "Responsive UI", "Content Architecture"],
+            "A self-directed portfolio rebuild that evolved from a static HTML/CSS/JavaScript site into a structured Next.js/TypeScript experience with clearer recruiter-facing messaging, stronger case-study presentation, and better positioning for full-stack .NET roles with a backend focus. The two public repositories document that progression from the earlier version to the current portfolio.",
+        tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Vercel"],
         links: {
             live: "https://vinh-portfolio-self.vercel.app",
             github: "https://github.com/Jeussu/portfolio",
@@ -165,147 +188,63 @@ export const PROJECTS = [
         slug: "mini-h2all",
         title: "Mini H2ALL (Capstone)",
         relevance:
-            "Transition work showing current backend growth in Web API, EF Core, PostgreSQL, messaging, and containerized development.",
+            "Capstone project covering a .NET Web API with EF Core and PostgreSQL, messaging with RabbitMQ/MassTransit, Docker Compose, and 40+ xUnit tests.",
         description:
-            "Capstone/transition project used to strengthen Web API, persistence, messaging, and containerized development. Included as backend-growth work, not enterprise production.",
-        tags: [".NET Web API", "EF Core", "PostgreSQL", "RabbitMQ", "Docker", "Capstone"],
+            "Capstone project built with .NET Web API, EF Core, PostgreSQL, RabbitMQ/MassTransit, and Docker Compose, covered by 40+ xUnit tests. Included as capstone work, not enterprise production.",
+        tags: [".NET Web API", "EF Core", "PostgreSQL", "RabbitMQ/MassTransit", "Docker Compose", "xUnit"],
         links: {},
-        status: "Capstone / Transition Work",
+        status: "Capstone",
         featured: false,
     },
 ]
 
 export const EXPERIENCE = [
     {
-        company: "HNC International JSC",
-        role: ".NET Developer | ERP & Logistics Systems",
-        period: "02/2023 - Present",
-        description:
-            "Worked on assigned modules inside the H2ALL / FastLink enterprise ERP/logistics platform, focusing on finance-related workflows, import operations, reporting, data reconciliation, and backend-oriented tracing across WinForms clients and hybrid service flows.",
+        company: "Thuý Nga Wedding & Event",
+        role: "Freelance Fullstack .NET Developer (Sole Engineer)",
+        period: "09/2026 - Present",
+        tech: "ASP.NET Core 10 (modular monolith), EF Core 10, SQL Server, Next.js 16, React, TypeScript, Docker, nginx, GitHub Actions",
         achievements: [
-            "Owned logic in import finance and reporting workflows, including detailed debt reports, beginning-balance handling, import fee processing, and debt-collection handoff support.",
-            "Improved legacy import debt reconciliation by refining business-key mapping, beginning-balance logic, and cross-source consistency to strengthen reporting accuracy and maintainability.",
-            "Supported production changes in workflow-heavy modules and traced issues end to end across UI -> service wrapper -> handler -> business logic -> data layer -> database to validate business rules and improve maintainability.",
-            "Improved heavy report and search flows handling 30k+ rows, contributing to ~40% faster report runtime and ~30% lower DB/query cost in supported areas.",
+            "Delivered a paid production platform end to end (requirements, architecture, code, testing, deployment): public website plus admin CMS/CRM for leads, customers, events, quotations/PDF, and payments; live since Oct 2026.",
+            "Backend: race-safe lead conversion, idempotent submissions, version checks, server-side money rules, a transactional email outbox, and ASP.NET Core Identity with 2FA, RBAC, and audit logging.",
+            "Frontend: server-rendered public pages with per-page SEO metadata; admin data tables with filters and pagination, validated quotation/payment forms, and a review-then-confirm lead conversion flow.",
+            "Released through GitHub Actions CI gates (1,900+ xUnit tests on real SQL Server, 60+ Playwright E2E specs), staging/UAT, and rollback-ready releases; AI-assisted with Claude Code under PR review.",
         ],
+        links: [
+            { label: "Live Site", href: THUY_NGA_LINKS.live },
+            { label: "Case Study", href: THUY_NGA_LINKS.caseStudy },
+            ...(THUY_NGA_LINKS.showcaseRepo ? [{ label: "GitHub Showcase", href: THUY_NGA_LINKS.showcaseRepo }] : []),
+        ],
+    },
+    {
+        company: "HNC International JSC",
+        role: ".NET Developer (ERP/Logistics)",
+        period: "02/2023 - Present",
+        tech: "WinForms .NET 4.8 (ClickOnce), DevExpress, .NET 8 services, REST + WCF/SOAP gateways, SQL Server/MySQL",
+        achievements: [
+            "Delivered production changes across finance/import workflows, debt reporting, reconciliation, and operations reporting, owning changes from UI to DB.",
+            "Built and maintained .NET 8 services with a multi-tier structure (Handlers/MessageTier/BL/DL/DTO) and integrated desktop workflows through REST and WCF/SOAP gateways.",
+            "Optimized heavy reporting flows through batching, indexing, stored-procedure refactoring, and execution-plan analysis, improving runtime by about 40% and reducing DB query cost by about 30%.",
+            "Handled large search result sets (30k+ rows per search) by chunking queries, pushing filtering and aggregation to SQL, and optimizing in-memory joins.",
+        ],
+        links: [{ label: "Case Study", href: "/case-studies/h2all-fastlink" }],
     },
     {
         company: "FPT Software",
-        role: ".NET Backend Developer",
+        role: "Junior .NET Core Backend Developer (Petronas - Oil & Gas)",
         period: "06/2022 - 01/2023",
-        description:
-            "Early backend foundation in enterprise application support, focused on maintaining backend modules and API-related flows.",
+        tech: "ASP.NET Core Web API, SQL Server, Git/TFS, Postman/Swagger",
         achievements: [
-            "Supported production-safe changes in ASP.NET Core backend modules and endpoints, including validation updates, bug fixing, defect investigation, and logging-related improvements.",
-            "Worked with teammates on API enhancements, testing support, and query review to help keep backend changes stable and release-ready.",
+            "Maintained and enhanced ASP.NET Core Web API modules and endpoints for CRUD and search workflows, applying validation, logging, and bug fixes for patch delivery and day-to-day backend maintenance.",
+            "Worked with BA and QA to clarify requirements, support safe patch releases, and participate in code reviews and API testing with Postman/Swagger.",
         ],
-    },
-]
-
-export const UPSKILL_PLAN = [
-    {
-        week: 1,
-        title: "ASP.NET Core Web API",
-        topics: [
-            "API design, controllers, and DTO contracts",
-            "Service boundaries and dependency injection",
-            "Validation, error handling, and logging",
-            "Backend flows that mirror ERP-style business rules",
-        ],
-        status: "active",
-    },
-    {
-        week: 2,
-        title: "Data & Persistence",
-        topics: [
-            "EF Core and PostgreSQL",
-            "SQL-first thinking for reporting and reconciliation",
-            "Query review and performance tuning",
-            "Data consistency and maintainable persistence logic",
-        ],
-        status: "active",
-    },
-    {
-        week: 3,
-        title: "Testing & Reliability",
-        topics: [
-            "xUnit and Moq",
-            "Testing workflow-heavy business logic",
-            "Regression safety for backend changes",
-            "Validation and error-path coverage",
-        ],
-        status: "active",
-    },
-    {
-        week: 4,
-        title: "Messaging & Delivery",
-        topics: [
-            "RabbitMQ / MassTransit basics",
-            "Docker / Docker Compose",
-            "GitHub Actions",
-            "Async workflow patterns for backend services",
-        ],
-        status: "active",
-    },
-]
-
-export const CASE_STUDY = {
-    title: "H2ALL / FastLink",
-    role: ".NET Developer | ERP & Logistics Systems",
-    duration: "2023 - Present",
-    overview:
-        "H2ALL / FastLink is a large, long-lived enterprise logistics ERP/platform supporting end-to-end operations across warehouse, checkpoint, finance, dispatch, reporting, and internal tooling.",
-    architecture: {
-        description:
-            "Modular client-server enterprise system with a heavily WinForms-based client and layered backend flow commonly described internally through MessageTier / NetworkTier / DataTier style boundaries.",
-        layers: [
-            "Client Side: WinForms-heavy production client, with WPF/desktop engineering background and DevExpress-based operational UI.",
-            "Service / Network Direction: Hybrid communication using WCF, Web API, and internal network wrappers.",
-            "Business Logic Direction: Workflow-heavy business modules, request/response flows, validation, and enterprise rule handling.",
-            "Data Direction: SQL Server, MySQL, reporting logic, multi-source aggregation, and reconciliation-heavy queries.",
-        ],
-    },
-    scope: [
-        "Finance-related logic",
-        "Import operations and import fee workflows",
-        "Receivables / debt / revenue reporting",
-        "Customs-clearance mail workflows",
-        "Business-logic validation and maintainability refactoring",
-    ],
-    representativeContribution: {
-        title: "Import Debt Reporting Reconciliation",
-        summary:
-            "A representative contribution was improving detailed import debt reporting and beginning-balance reconciliation logic in a legacy reporting flow.",
-        points: [
-            "Identified that SO_HOA_DON in the legacy debt-balance table corresponded to SO_HOUSE_AWB.",
-            "Applied the correct reconciliation key using MA_KHACH_HANG + SO_HOUSE_AWB.",
-            "Integrated TONG_TIEN_TON into TON_THANG_TRUOC for more accurate beginning-balance handling.",
-            "Filtered incomplete keys to avoid incorrect reconciliation and improve maintainability.",
-        ],
-    },
-}
-
-export const BACKEND_DIRECTION = [
-    {
-        title: "API & Service Design",
-        description:
-            "Extending production experience in workflow-heavy systems into clearer API boundaries, DTO design, and service-layer structure.",
-    },
-    {
-        title: "Persistence & Reliability",
-        description:
-            "Building on reporting and SQL depth with stronger persistence patterns, automated tests, and safer backend change validation.",
-    },
-    {
-        title: "Async Workflows & Delivery",
-        description:
-            "Adding practical familiarity with messaging, containerized development, and lightweight delivery practices that complement enterprise application work.",
+        links: [],
     },
 ]
 
 export const CERTIFICATES = [
     {
-        category: "Supporting Course",
+        category: "Certification",
         title: "Build ASP.NET Core Web API (.NET 8)",
         issuer: "Udemy · Sameer Saini",
         date: "Apr 2026",
@@ -314,27 +253,19 @@ export const CERTIFICATES = [
         image: "/images/certificates/aspnet-core-web-api-udemy-2026.jpg",
     },
     {
-        category: "Supporting Course",
-        title: "Complete ASP.NET Core MVC (.NET 6)",
-        issuer: "Udemy · Bruggen Patel",
-        date: "Oct 2022",
-        description: "Coursework covering ASP.NET Core MVC fundamentals, architecture, and deployment-oriented concepts.",
-        image: "/images/certificates/aspnet-core-mvc-udemy.png",
+        category: "Certification",
+        title: "Responsive Portfolio Website HTML5, CSS3, JavaScript",
+        issuer: "Udemy · Cheetah Academy",
+        date: "Dec 2025",
+        description: "12-hour course on responsive layouts with HTML5, CSS3, and JavaScript.",
+        image: "/images/certificates/responsive-portfolio-udemy-2025.jpg",
     },
     {
         category: "Education",
         title: "BSc (Hons) Computing",
         issuer: "University of Greenwich",
-        date: "Jul 2022",
+        date: "2019 - 2022",
         description: "Undergraduate computing degree covering software, systems, and core engineering foundations.",
         image: "/images/certificates/greenwich-bachelor.png",
-    },
-    {
-        category: "Education",
-        title: "BTEC Level 5 HND in Computing",
-        issuer: "Pearson BTEC",
-        date: "Feb 2021",
-        description: "Higher National Diploma in Computing with a practical foundation in software and IT systems.",
-        image: "/images/certificates/pearson-btec-hnd.png",
     },
 ]

@@ -1,17 +1,18 @@
-"use client"
-
 import { Badge } from "@/components/ui/badge"
 import { SKILLS } from "@/lib/data"
 
 const coreCategories = [
-    { title: "Backend & APIs", skills: SKILLS.backend },
-    { title: "Data & Persistence", skills: SKILLS.data },
-    { title: "Business Domain Knowledge", skills: SKILLS.domain },
+    { title: "Backend/Services", skills: SKILLS.backend },
+    { title: "Data", skills: SKILLS.data },
+    { title: "Frontend", skills: SKILLS.frontend },
 ]
 
 const supportingCategories = [
-    { title: "Messaging / Integration / DevOps", skills: SKILLS.integration },
-    { title: "Enterprise Desktop Background", skills: SKILLS.desktop },
+    { title: "Integration & Delivery", skills: SKILLS.integration },
+    { title: "Testing & Tooling", skills: SKILLS.testing },
+    { title: "AI-Assisted Development", skills: SKILLS.ai },
+    { title: "Legacy Desktop", skills: SKILLS.desktop },
+    { title: "Business Domain Knowledge", skills: SKILLS.domain },
 ]
 
 export function Skills() {
@@ -20,21 +21,19 @@ export function Skills() {
             <div className="container mx-auto px-4">
                 <div className="mx-auto mb-12 max-w-3xl text-center">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                        Backend-Focused Skill Set
+                        Backend-Focused, Full-Stack Capable
                     </p>
-                    <h2 className="text-3xl font-black tracking-tight md:text-4xl">Core strengths first, supporting areas clearly labeled</h2>
+                    <h2 className="text-3xl font-black tracking-tight md:text-4xl">Backend depth first, full-stack delivery proven</h2>
                     <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-                        Strong production depth in enterprise desktop systems, with deliberate positioning toward backend .NET and service-oriented work.
-                    </p>
-                    <p className="mt-3 text-sm text-muted-foreground">
-                        Production-proven strengths are shown first. Any current backend-growth areas are labeled explicitly.
+                        Core .NET backend and data skills from enterprise ERP/logistics work, plus the frontend, testing, and
+                        delivery tools used to ship a production full-stack platform.
                     </p>
                 </div>
 
                 <div className="mx-auto space-y-10">
                     <div>
                         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-foreground/60">
-                            Production-Proven Strengths
+                            Core Strengths
                         </p>
                         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
                             {coreCategories.map((category) => (
@@ -45,9 +44,9 @@ export function Skills() {
 
                     <div>
                         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-foreground/60">
-                            Supporting Depth
+                            Delivery, Tooling & Background
                         </p>
-                        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                             {supportingCategories.map((category) => (
                                 <SkillCategory key={category.title} title={category.title} skills={category.skills} emphasis="supporting" />
                             ))}
@@ -84,12 +83,8 @@ function SkillCategory({
                 {skills.map((skill) => (
                     <Badge
                         key={skill}
-                        variant={isSecondarySkill(skill) ? "outline" : "secondary"}
-                        className={
-                            isSecondarySkill(skill)
-                                ? "border-border/80 bg-background/70 px-3 py-1.5 text-sm font-normal text-muted-foreground"
-                                : "border-transparent bg-primary/[0.08] px-3 py-1.5 text-sm font-normal text-foreground"
-                        }
+                        variant="secondary"
+                        className="border-transparent bg-primary/[0.08] px-3 py-1.5 text-sm font-normal text-foreground"
                     >
                         {skill}
                     </Badge>
@@ -97,8 +92,4 @@ function SkillCategory({
             </div>
         </div>
     )
-}
-
-function isSecondarySkill(skill: string) {
-    return skill.includes("Current Focus") || skill.includes("Learning Direction")
 }

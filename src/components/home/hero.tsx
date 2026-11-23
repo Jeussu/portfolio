@@ -10,9 +10,24 @@ import { Button } from "@/components/ui/button"
 
 const quickSignals = [
     "ERP / Logistics",
-    "Finance Reporting",
     "SQL Performance",
-    "Workflow Systems",
+    "Fullstack Delivery",
+    "ASP.NET Core + Next.js",
+]
+
+const flagships = [
+    {
+        title: "H2ALL / FastLink",
+        description: "Enterprise ERP / logistics case study",
+        badge: "3+ Years",
+        href: "/case-studies/h2all-fastlink",
+    },
+    {
+        title: "Thuý Nga Wedding & Event",
+        description: "Production full-stack platform, live since Oct 2026",
+        badge: "Live",
+        href: "/case-studies/thuy-nga-wedding",
+    },
 ]
 
 export function Hero() {
@@ -36,13 +51,13 @@ export function Hero() {
                         className="max-w-4xl"
                     >
                         <p className="mb-6 inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                            {PROFILE.title}
+                            {PROFILE.stack.split(", ").join(" · ")}
                         </p>
                         <h1 className="max-w-3xl text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
                             <span className="mb-4 block text-sm font-semibold uppercase tracking-[0.3em] text-foreground/55">
                                 {PROFILE.name}
                             </span>
-                            <span className="block">{PROFILE.headline}</span>
+                            <span className="block">{PROFILE.title}</span>
                         </h1>
                         <p className="mt-6 max-w-3xl text-lg font-medium leading-relaxed text-foreground/85 md:text-xl">
                             {PROFILE.supporting}
@@ -64,8 +79,8 @@ export function Hero() {
 
                         <div className="mt-10 flex flex-wrap items-center gap-3 md:gap-4">
                             <Button asChild size="lg" className="h-12 w-full px-7 text-base sm:w-auto">
-                                <Link href="/case-studies/h2all-fastlink">
-                                    Read Case Study <ArrowRight className="ml-2 h-5 w-5" />
+                                <Link href="/case-studies">
+                                    Read Case Studies <ArrowRight className="ml-2 h-5 w-5" />
                                 </Link>
                             </Button>
                             <Button variant="outline" size="lg" className="h-12 w-full px-7 text-base sm:w-auto" asChild>
@@ -81,7 +96,8 @@ export function Hero() {
                         </div>
 
                         <p className="mt-5 text-sm text-muted-foreground">
-                            Start with the H2ALL / FastLink case study for the clearest view of enterprise production depth.
+                            Two flagship case studies: H2ALL / FastLink for enterprise ERP/logistics depth, and Thuý Nga
+                            Wedding & Event for end-to-end full-stack production delivery.
                         </p>
                     </motion.div>
 
@@ -106,17 +122,26 @@ export function Hero() {
 
                             <div className="relative mt-4 rounded-[1.4rem] border border-border/70 bg-background/85 p-4 shadow-[0_18px_40px_-30px_hsl(var(--foreground)/0.4)]">
                                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                                    Flagship Proof
+                                    Flagship Case Studies
                                 </p>
-                                <div className="mt-3 flex items-center justify-between gap-4">
-                                    <div>
-                                        <p className="text-base font-semibold">H2ALL / FastLink</p>
-                                        <p className="text-sm text-muted-foreground">Enterprise ERP / logistics case study</p>
-                                    </div>
-                                    <span className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-semibold text-primary">
-                                        3+ Years
-                                    </span>
-                                </div>
+                                <ul className="mt-3 space-y-3">
+                                    {flagships.map((flagship) => (
+                                        <li key={flagship.href}>
+                                            <Link
+                                                href={flagship.href}
+                                                className="flex items-center justify-between gap-4 rounded-xl transition-colors hover:text-primary"
+                                            >
+                                                <div>
+                                                    <p className="text-base font-semibold">{flagship.title}</p>
+                                                    <p className="text-sm text-muted-foreground">{flagship.description}</p>
+                                                </div>
+                                                <span className="shrink-0 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-semibold text-primary">
+                                                    {flagship.badge}
+                                                </span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </motion.div>

@@ -13,7 +13,6 @@ const navItems = [
     { name: "Case Studies", href: "/case-studies" },
     { name: "Projects", href: "/projects" },
     { name: "Experience", href: "/experience" },
-    { name: "Backend Growth", href: "/upskill" },
     { name: "Contact", href: "/contact" },
 ];
 

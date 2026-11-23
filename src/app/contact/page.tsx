@@ -4,12 +4,14 @@ import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { PROFILE } from "@/lib/data"
+import { pageMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-    title: "Contact | Do The Vinh",
+export const metadata: Metadata = pageMetadata({
+    title: "Contact",
     description:
-        "Contact Do The Vinh for .NET backend opportunities in ERP/logistics, reporting, data reconciliation, and workflow-heavy enterprise systems.",
-}
+        "Contact Do The Vinh for Fullstack .NET (backend-focused) opportunities in ERP/logistics, reporting, and workflow-heavy systems.",
+    path: "/contact",
+})
 
 export default function ContactPage() {
     return (
@@ -22,11 +24,11 @@ export default function ContactPage() {
                                 Contact
                             </p>
                             <h1 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
-                                Backend roles where workflow-heavy systems matter
+                                Fullstack .NET roles with a backend focus
                             </h1>
                             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-                                Open to .NET backend opportunities where ERP/logistics context, finance/reporting
-                                correctness, and maintainable service work are valued.
+                                Open to Fullstack .NET (backend-focused) opportunities where ERP/logistics context,
+                                finance/reporting correctness, and maintainable service work are valued.
                             </p>
 
                             <div className="mt-8 flex flex-wrap gap-3">
@@ -61,7 +63,7 @@ export default function ContactPage() {
                             </Link>
                             <p className="mt-4 leading-7 text-muted-foreground">
                                 Email and LinkedIn are the clearest channels for role discussions, interview coordination,
-                                and sharing relevant context around backend opportunities.
+                                and sharing relevant context around full-stack .NET opportunities.
                             </p>
 
                             <div className="mt-6 space-y-4 border-t border-border/70 pt-6">
@@ -93,9 +95,9 @@ export default function ContactPage() {
                         </p>
                         <h2 className="text-2xl font-semibold tracking-tight">Where this profile fits best</h2>
                         <ul className="mt-6 space-y-3 text-sm leading-7 text-muted-foreground md:text-base">
-                            <li>.NET backend roles where ERP/logistics workflows, finance/reporting logic, and data correctness matter.</li>
+                            <li>Fullstack .NET (backend-focused) roles where ERP/logistics workflows, finance/reporting logic, and data correctness matter.</li>
                             <li>Teams that value SQL-heavy investigation, service integration, and maintainable business-rule implementation.</li>
-                            <li>Opportunities that see enterprise WinForms/WPF background as real production depth feeding into backend service work.</li>
+                            <li>Teams building ASP.NET Core services with React/Next.js frontends, where one engineer can own a feature from database to UI.</li>
                         </ul>
                     </div>
 
