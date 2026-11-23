@@ -5,12 +5,14 @@ import { ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card"
+import { pageMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-    title: "Case Studies | Do The Vinh",
+export const metadata: Metadata = pageMetadata({
+    title: "Case Studies",
     description:
         "Case studies covering enterprise ERP/logistics work on H2ALL / FastLink and the end-to-end production delivery of the Thuý Nga Wedding & Event platform.",
-}
+    path: "/case-studies",
+})
 
 const caseStudies = [
     {

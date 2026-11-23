@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
 
 import { ExperienceContent } from "@/components/experience/experience-content"
+import { pageMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-    title: "Experience | Do The Vinh",
+export const metadata: Metadata = pageMetadata({
+    title: "Experience",
     description:
-        "Enterprise ERP/logistics experience across finance workflows, reporting accuracy, hybrid service environments, and selected credentials supporting a .NET backend profile.",
-}
+        "Freelance full-stack production delivery and enterprise ERP/logistics experience, plus education and certifications supporting a backend-focused full-stack .NET profile.",
+    path: "/experience",
+})
 
 export default function ExperiencePage() {
     return <ExperienceContent />

@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { BookOpen, Github, Link as LinkIcon } from "lucide-react"
 
@@ -7,7 +5,7 @@ import { PROJECTS } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card"
 
 export function ProjectList() {
     return (
@@ -23,9 +21,9 @@ export function ProjectList() {
                     >
                         <CardHeader className="pb-5">
                             <div className="mb-2 flex items-start justify-between gap-3">
-                                <CardTitle className="text-2xl transition-colors group-hover:text-primary">
+                                <h2 className="text-2xl font-semibold leading-tight tracking-tight transition-colors group-hover:text-primary">
                                     {project.title}
-                                </CardTitle>
+                                </h2>
                                 {project.status && (
                                     <Badge variant="outline" className="shrink-0 text-xs">
                                         {project.status}
@@ -91,7 +89,7 @@ export function ProjectList() {
                             )}
                             {!project.links.github && !project.links.live && !project.links.more?.length && (
                                 <p className="text-sm leading-relaxed text-muted-foreground">
-                                    No public repo or demo is shared for this capstone. It is included to show current backend-growth direction only.
+                                    No public repo or demo is shared for this capstone.
                                 </p>
                             )}
                         </CardFooter>

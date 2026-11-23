@@ -58,7 +58,9 @@ export function TOC({ sections = h2allSections }: { sections?: { id: string; lab
                             )}
                             onClick={(e) => {
                                 e.preventDefault()
-                                document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" })
+                                document.getElementById(section.id)?.scrollIntoView({
+                                    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+                                })
                                 setActiveSection(section.id)
                             }}
                         >

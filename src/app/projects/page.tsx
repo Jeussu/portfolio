@@ -2,12 +2,14 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 import { ProjectList } from "@/components/projects/project-list"
+import { pageMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-    title: "Projects | Do The Vinh",
+export const metadata: Metadata = pageMetadata({
+    title: "Projects",
     description:
-        "Selected projects led by an end-to-end client production delivery (Thuý Nga Wedding & Event), plus supporting work in backend delivery, portfolio engineering, and transition alongside enterprise ERP/logistics experience.",
-}
+        "Selected projects led by an end-to-end client production delivery (Thuý Nga Wedding & Event), plus public .NET projects, portfolio engineering, and capstone work.",
+    path: "/projects",
+})
 
 export default function ProjectsPage() {
     return (

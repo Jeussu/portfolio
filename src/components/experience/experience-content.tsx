@@ -1,7 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Award, Briefcase, Calendar, X } from "lucide-react"
 
@@ -9,18 +10,35 @@ import { CERTIFICATES, EXPERIENCE } from "@/lib/data"
 
 export function ExperienceContent() {
     const [selectedCert, setSelectedCert] = useState<typeof CERTIFICATES[number] | null>(null)
+    const closeButtonRef = useRef<HTMLButtonElement>(null)
+    const triggerRef = useRef<HTMLElement | null>(null)
+
+    useEffect(() => {
+        if (!selectedCert) return
+
+        closeButtonRef.current?.focus()
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") setSelectedCert(null)
+        }
+        document.addEventListener("keydown", onKeyDown)
+
+        return () => {
+            document.removeEventListener("keydown", onKeyDown)
+            triggerRef.current?.focus()
+        }
+    }, [selectedCert])
 
     return (
         <div className="container mx-auto px-4 py-14 md:py-16">
             <div className="mx-auto max-w-6xl space-y-16">
                 <section className="mx-auto max-w-3xl text-center">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                        Enterprise Delivery
+                        Production Delivery
                     </p>
                     <h1 className="text-4xl font-black tracking-tight md:text-5xl">Experience</h1>
                     <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                        Enterprise ERP/logistics experience across finance workflows, reporting accuracy,
-                        hybrid services, and end-to-end backend tracing.
+                        Freelance full-stack production delivery on ASP.NET Core and Next.js, built on enterprise
+                        ERP/logistics experience across finance workflows, reporting accuracy, and hybrid services.
                     </p>
                 </section>
 
@@ -57,7 +75,10 @@ export function ExperienceContent() {
                                         </div>
                                     </div>
 
-                                    <p className="mb-6 max-w-3xl leading-8 text-muted-foreground">{exp.description}</p>
+                                    <p className="mb-6 max-w-3xl leading-8 text-muted-foreground">
+                                        <span className="font-semibold text-foreground">Tech: </span>
+                                        {exp.tech}
+                                    </p>
 
                                     <ul className="grid gap-3">
                                         {exp.achievements.map((item, i) => (
@@ -70,6 +91,29 @@ export function ExperienceContent() {
                                             </li>
                                         ))}
                                     </ul>
+
+                                    {exp.links.length > 0 && (
+                                        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                                            {exp.links.map((link) =>
+                                                link.href.startsWith("/") ? (
+                                                    <Link key={link.href} href={link.href} className="text-primary underline-offset-4 hover:underline">
+                                                        {link.label}
+                                                    </Link>
+                                                ) : (
+                                                    <a
+                                                        key={link.href}
+                                                        href={link.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-primary underline-offset-4 hover:underline"
+                                                    >
+                                                        {link.label}
+                                                        <span className="sr-only"> (opens in a new tab)</span>
+                                                    </a>
+                                                )
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </motion.article>
                         ))}
@@ -86,18 +130,21 @@ export function ExperienceContent() {
                         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
                             Selected Credentials
                         </p>
-                        <h2 className="text-3xl font-black tracking-tight md:text-4xl">Education & supporting credentials</h2>
+                        <h2 className="text-3xl font-black tracking-tight md:text-4xl">Education & certifications</h2>
                         <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-                            Selected background items that support the .NET/backend profile without competing with production experience.
+                            Education and certifications that support the full-stack .NET profile alongside production experience.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {CERTIFICATES.map((cert, index) => (
                             <motion.button
                                 layoutId={`cert-${cert.title}`}
                                 key={cert.title}
-                                onClick={() => setSelectedCert(cert)}
+                                onClick={(event) => {
+                                    triggerRef.current = event.currentTarget
+                                    setSelectedCert(cert)
+                                }}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.32 + index * 0.08 }}
@@ -153,11 +200,16 @@ export function ExperienceContent() {
                         />
                         <motion.div
                             layoutId={`cert-${selectedCert.title}`}
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="certificate-dialog-title"
                             className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-[1.8rem] border border-border/70 bg-card shadow-[0_40px_120px_-60px_hsl(var(--foreground)/0.7)]"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
+                                ref={closeButtonRef}
                                 onClick={() => setSelectedCert(null)}
+                                aria-label="Close"
                                 className="absolute right-4 top-4 z-10 rounded-full bg-background/75 p-2 transition-colors hover:bg-background"
                             >
                                 <X className="h-5 w-5" />
@@ -188,7 +240,11 @@ export function ExperienceContent() {
                                     </div>
                                 </div>
 
-                                <motion.h3 layoutId={`title-${selectedCert.title}`} className="text-2xl font-semibold leading-tight sm:text-3xl">
+                                <motion.h3
+                                    id="certificate-dialog-title"
+                                    layoutId={`title-${selectedCert.title}`}
+                                    className="text-2xl font-semibold leading-tight sm:text-3xl"
+                                >
                                     {selectedCert.title}
                                 </motion.h3>
                                 <p className="mt-4 max-w-3xl leading-8 text-muted-foreground">{selectedCert.description}</p>

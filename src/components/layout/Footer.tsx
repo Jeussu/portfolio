@@ -43,7 +43,7 @@ export function Footer() {
                 <div className="text-center md:text-right">
                     <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} All rights reserved.</p>
                     <p className="mt-1 max-w-sm text-xs leading-6 text-muted-foreground">
-                        Focused on .NET backend opportunities in ERP/logistics systems, reporting, and workflow-heavy business applications.
+                        Fullstack .NET developer (backend-focused): ERP/logistics systems, SQL performance, and production full-stack delivery.
                     </p>
                 </div>
             </div>
